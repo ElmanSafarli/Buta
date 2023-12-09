@@ -1,0 +1,34 @@
+<!-- include/footer.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-logo">
+                        <img src="{% static 'assets/logo-bg.png' %}" alt="">
+                    </div>
+                    <div class="footer-item-group">
+                        <ul>
+                            <li><a href="/">Əsas</a></li>
+                            <li><a href="./menu">Menu</a></li>
+                            <li><a href="">Əlaqə</a></li>
+                            <li><a href="">Haqqımızda</a></li>
+                            <li><a href="">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-hr"></div>
+                    <div class="footer-social">
+                        <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

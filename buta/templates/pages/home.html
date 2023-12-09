@@ -1,0 +1,419 @@
+<!-- pages/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <header>
+        <div class="header">
+            <div class="header-left">
+                {% include '../include/navBar.html' %}
+                <div class="header-info">
+                    <div class="header-title">Asılılıq <span>yaradan</span> dad</div>
+                    <div class="header-text">Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və
+                        sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble teabir fincanda əsl
+                        sehrdir, anları unikal və xüsusi edir.</div>
+                    <div class="header-link"><a href="">Menyunu araşdırın</a></div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="header-img-group">
+                    <div class="header-img-box hImgBox1"></div>
+                    <div class="header-img-box hImgBox2"></div>
+                    <div class="header-img-box hImgBox3"></div>
+                </div>
+                <div id="splide" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide"><img src="{% static 'assets/Rectangle11.png' %}">
+                            </li>
+                            <li class="splide__slide"><img src="{% static 'assets/Rectangle2.png' %}">
+                            </li>
+                            <li class="splide__slide"><img src="{% static 'assets/Rectangle20.png' %}">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <article>
+        <div class="advantages">
+            <div class="advantages-content">
+                <div class="advantages-group">
+                    <div class="advantages-box">
+                        <div class="advantages-box-left">
+                            <div class="advantages-box-circle"></div>
+                        </div>
+                        <div class="advantages-box-right">
+                            <div class="advantages-title">1k+</div>
+                            <div class="advantages-box-subtitle">5 ulduzlu reytinq</div>
+                        </div>
+                    </div>
+                    <div class="advantages-box">
+                        <div class="advantages-box-left">
+                            <div class="advantages-box-circle"></div>
+                        </div>
+                        <div class="advantages-box-right">
+                            <div class="advantages-title">15+</div>
+                            <div class="advantages-box-subtitle">Komanda üzvü</div>
+                        </div>
+                    </div>
+                    <div class="advantages-box">
+                        <div class="advantages-box-left">
+                            <div class="advantages-box-circle"></div>
+                        </div>
+                        <div class="advantages-box-right">
+                            <div class="advantages-title">1.5k+</div>
+                            <div class="advantages-box-subtitle">Ziyarətçilərin sayı</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <section>
+        <div class="about">
+            <div class="about-content">
+                <div class="about-left">
+                    <img src="{% static 'assets/about.png' %}" alt="">
+                </div>
+                <div class="about-right">
+                    <div class="about-section">Niyə biz?</div>
+                    <div class="about-title">Dadımızın fərqli xüsusiyyətləri</div>
+                    <div class="about-text">Kreativ aşpazlarımız damaqda unudulmaz dad buraxmaq üçün hər bir detalı
+                        diqqətlə nəzərdən keçirir və təqdim edirlər.</div>
+                    <div class="about-item-group">
+                        <div class="about-item">
+                            <div class="about-item-left">
+                                <div class="about-item-icon">
+                                    <img src="{% static 'assets/about-icon.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="about-item-right">
+                                <div class="about-item-title">Yüksək Xidmət</div>
+                                <div class="about-item-subtitle">Biz xüsusi xidmətlə müstəsna ləzzətlər təklif edirik.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-item-left">
+                                <div class="about-item-icon">
+                                    <img src="{% static 'assets/flavoring 1.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="about-item-right">
+                                <div class="about-item-title">Mövsümi ləzzətlər</div>
+                                <div class="about-item-subtitle">Təzə və mövsümə uyğun maddələr</div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-item-left">
+                                <div class="about-item-icon">
+                                    <img src="{% static 'assets/menu 1.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="about-item-right">
+                                <div class="about-item-title">Kompleks Menyular</div>
+                                <div class="about-item-subtitle">Aşpazlarımızın xüsusi reseptləri ilə unikal dad
+                                    təcrübəsi təqdim edirik.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="menu">
+            <div class="menu-content">
+                <div class="menu-left">
+                </div>
+                <div class="menu-right">
+                    <div class="menu-section">Menu</div>
+                    <div class="menu-title">Bizim unikal və yüksək keyfiyyətli dadlarımız.</div>
+                    <div class="menu-slider-navigate">
+                        <div class="slider-navigation-bar">
+                            <div class="slider-navigation-category" onclick="showSlider(1)">İçkilər</div>
+                            <div class="slider-navigation-category" onclick="showSlider(2)">Mal əti</div>
+                            <div class="slider-navigation-category" onclick="showSlider(3)">Qəlyanaltılar</div>
+                            <div class="slider-navigation-category" onclick="showSlider(4)">Saladlar</div>
+                        </div>
+                        <div class="sliderIndicator">
+                            <div class="slider-indicator" id="sliderIndicator"></div>
+                        </div>
+                    </div>
+
+                    <div id="menuSlide1" class="splide active">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="menuSlide2" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c7b32eb32-Vanilla-flavored-tea.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+
+                                <!-- Add more slides as needed -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="menuSlide3" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c7da238f8-Tea with almond flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <!-- Add more slides as needed -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="menuSlide4" class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c8e5c2443-Pannacotta-Tea.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <li class="splide__slide">
+                                    <div class="menu-box">
+                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
+                                        <a href="">Ətraflı oxu</a>
+                                    </div>
+                                </li>
+                                <!-- Add more slides as needed -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="menu-text">
+                        Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və sevindirənbubble tea
+                        sortunun müxtəlif variantlarını yaradırıq. Bizim bubble teabir fincanda əsl sehrdir, anları
+                        unikal və xüsusi edir.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="blog">
+            <div class="blog-content">
+                <div class="blog-section">Blog</div>
+                <div class="blog-title">Zövq jurnalı</div>
+                <div class="blog-box-group">
+                    <div class="blog-box blog-box-1">
+                        <div class="blog-box-date">Noyabr 11, 2023</div>
+                        <div class="blog-box-title">Buta taste cafenin açılış mərsimi keçirildi</div>
+                        <div class="blog-box-link"><a href="">Ətraflı oxu</a></div>
+                    </div>
+                    <div class="blog-box blog-box-1">
+                        <div class="blog-box-date">Noyabr 11, 2023</div>
+                        <div class="blog-box-title">Buta taste cafenin açılış mərsimi keçirildi</div>
+                        <div class="blog-box-link"><a href="">Ətraflı oxu</a></div>
+                    </div>
+                    <div class="blog-box blog-box-1">
+                        <div class="blog-box-date">Noyabr 11, 2023</div>
+                        <div class="blog-box-title">Buta taste cafenin açılış mərsimi keçirildi</div>
+                        <div class="blog-box-link"><a href="">Ətraflı oxu</a></div>
+                    </div>
+                </div>
+                <div class="blog-btn">
+                    <a href="">Daha çox</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section>
+        <div class="review">
+            <div class="review-title">Rəylər</div>
+            <div class="review-content">
+                <div id="userReviewsSlider" class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for review in reviews %}
+                            <li class="splide__slide">
+                                <!-- Slide content goes here -->
+                                <div class="review-box">
+                                    <div class="review-name">{{ review.full_name }}</div>
+                                    <div class="review-text">
+                                        {{ review.text }}
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <button class="open-review-form" id="openReviewForm">Rəy yazın</button>
+            </div>
+        </div>
+    </section>
+
+ <div class="review-form-box">
+    <div class="popup__blur"></div>
+    <div class="review-form-box-content">
+        <div class="review-form-box-content-top">
+                <div class="review-form-box-title">Rəy bildirin</div>
+                <button id="closeReviewForm">X</button>
+        </div>
+        <form class="review-form-box-form" method="post" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="review-form-item">
+                {{ form.full_name }}
+            </div>
+
+            <div class="review-form-item">
+                {{ form.email }}
+            </div>
+
+            <div class="review-form-item">
+                {{ form.text }}
+            </div>
+            <button type="submit">Göndər</button>
+        </form>
+    </div>
+</div>
+
+
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3039.240954097497!2d49.843177!3d40.38135200000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d472808bd09%3A0xb5bd6b58c3c23a90!2sButa%20Dining%20%26%20Cha!5e0!3m2!1sen!2saz!4v1700900125188!5m2!1sen!2saz"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    {% include '../include/footer.html' %}
+
+{% endblock %}

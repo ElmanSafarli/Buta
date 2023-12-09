@@ -1,0 +1,120 @@
+<!-- pages/menu.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div style="padding: 0 8%;">
+    {% include '../include/navBar.html' %}
+</div>
+
+    <div class="menuPage">
+        <div class="menuPage-content">
+            <div class="menuPage-section">Menu</div>
+              <!-- Display categories -->
+        <div class="menuPage-categories">
+            {% for category in categories %}
+                <div class="menuPage-category">
+                    <button class="category-btn" data-category="{{ category.id }}">{{ category.name }}</button>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <!-- subcategories -->
+        <div class="subcategory-line">
+            {% for subcategory in subcategories %}
+                <button class="subcategory-item" data-subcategory="{{ subcategory.id }}" data-category="{{ subcategory.category_id }}">{{ subcategory.name }}</button>
+            {% endfor %}
+        </div>
+
+        <div class="business-lunch">
+            Buesnis lunc
+        </div>
+
+        <!-- Display menu items -->
+        <div class="menu-items">
+            {% for menu_item in menu_items %}
+                <div class="menu-item" data-menu-item-id="{{ menu_item.id }}" data-category="{{ menu_item.subcategory_id }}">
+                    <div class="menu-img">
+                        <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                    </div>
+                    <div class="menu-item-title"><a href="">{{ menu_item.name }}</a></div>
+                    <div class="menu-item-description">{{ menu_item.description }}</div>
+                    <div class="menu-item-bottom">
+                        <div class="menu-price">{{ menu_item.price }} ₼</div>
+                        <div class="menu-count">
+                            <button class="decrementBtn" data-menu-item-id="{{ menu_item.id }}"><img src="{% static 'assets/minus 1.png' %}" alt=""></button>
+                            <p class="count" id="count_{{ menu_item.id }}">1</p>
+                            <button class="incrementBtn" data-menu-item-id="{{ menu_item.id }}"><img src="{% static 'assets/plus 1.png' %}" alt=""></button>
+                        </div>
+                        <div class="menu-btn">
+                            <button class="addToCartBtn" data-menu-item="{{ menu_item.id }}"><img src="{% static 'assets/shopping-cart.png' %}" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="cart-count-container">
+            <span id="cartCount">0</span>
+        </div>
+        <button id="showCartBtn"><img src="{% static 'assets/shopping-bag.png' %}" alt=""></button>
+
+        <div id="cartSidebar">
+            <div class="cartHeader">
+                <h2>Shopping Cart</h2>
+                <span class="closeBtn" id="closeCartBtn">&times;</span>
+            </div>
+            <div class="cartContent" id="cartContent">
+                <div class="shopping-cart">
+                    <ul id="cart-items" class="cart-items-list"></ul>
+                    <div id="total-price">Total Price: 0 ₼</div>
+                    <button id="send-to-telegram-btn">Sifariş ver</button>
+                </div>
+            </div>
+        </div>
+
+              <div id="contactForm" class="contact-information-order-form-container">
+                <div class="contact-information-order-container">
+                  <div class="contact-information-order-form-wrapper">
+                    <div class="contact-information-order-heading">
+                      Contact Us
+                        <button id="closeReviewForm" type="button">X</button>
+                    </div>
+                    <p class="contact-information-order-sub-heading">
+                      Fill up the form below to send us a message.
+                    </p>
+                      <form id="contactFormForm">
+                          <div class="mb-6">
+                              <label for="contactName">Ad</label>
+                              <input type="text" name="contactName" id="contactName" placeholder="Ad" required class="contact-information-order-form-input" />
+                          </div>
+                          <div class="mb-6">
+                              <label for="contactSurname">Soyad</label>
+                              <input type="text" name="contactSurname" id="contactSurname" placeholder="Soyad" required class="contact-information-order-form-input" />
+                          </div>
+                          <div class="mb-6">
+                              <label for="contactNumber">Əlaqə nömrəsi</label>
+                              <input type="text" name="contactNumber" id="contactNumber" placeholder="+994 70 000 00 00" required class="contact-information-order-form-input" />
+                          </div>
+                          <div class="mb-6">
+                              <label for="contactAddress">Ünvan</label>
+                              <input type="text" name="contactAddress" id="contactAddress" placeholder="Təbriz küçəsi...." required class="contact-information-order-form-input" />
+                          </div>
+                          <div class="mb-6">
+                          <button id="confirmContactBtn" type="button" class="contact-information-order-submit-btn">
+                            Göndər
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+    </div>
+    </div>
+
+
+{% endblock %}

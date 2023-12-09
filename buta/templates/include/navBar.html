@@ -1,0 +1,51 @@
+<!-- pages/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+                <nav>
+                    <div class="nav-content">
+                        <div class="nav-logo">
+                            <img src="{% static 'assets/logo-bg.png' %}" alt="">
+                        </div>
+                        <div class="nav-item">
+                            <ul>
+                                <li><a href="/">Əsas</a></li>
+                                <li><a href="/menu">Menu</a></li>
+                                <li><a href="">Əlaqə</a></li>
+                                <li><a href="">Haqqımızda</a></li>
+                                <li><a href="">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar" id="sidebar">
+                            <div class="menu-group">
+                                <div id="menu"></div>
+                                <div id="menu"></div>
+                                <div id="menu"></div>
+                            </div>
+
+                            <div id="active" class="action-menu">
+                                <div class="sidebar-logo">
+                                    <img src="{% static 'assets/logo-bg.png' %}" alt="">
+                                </div>
+                                <ul>
+                                    <li><a href="/">Əsas</a></li>
+                                    <li><a href="/menu">Menu</a></li>
+                                    <li><a href="">Əlaqə</a></li>
+                                    <li><a href="">Haqqımızda</a></li>
+                                    <li><a href="">Blog</a></li>
+                                </ul>
+                                <div class="sidebar-btn">
+                                    <button>Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+
+
+
+
+{% endblock %}
