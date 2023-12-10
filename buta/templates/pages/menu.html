@@ -27,7 +27,200 @@
         </div>
 
         <div class="business-lunch">
-            Buesnis lunc
+            <div class="lunch-box-menu">
+                <div class="lunch-box-content">
+                    <div class="lunch-box-left">
+                        <div class="lunch-box-weekday">
+                            <ul>
+                                <li><button onclick="showLunchBox(1)">Bazar ertəsi</button></li>
+                                <li><button onclick="showLunchBox(2)">Çərşənbə axşamı</button></li>
+                                <li><button onclick="showLunchBox(3)">Çərşənbə</button></li>
+                                <li><button onclick="showLunchBox(4)">Cümə axşamı</button></li>
+                                <li><button onclick="showLunchBox(5)">Cümə</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lunch-box-right">
+                        <ul class="lunch-box" id="lunch-box-1">
+                            <li>
+                                <div class="lunch-box-title">Soup</div>
+                                <div class="lunch-box-item">01 Toyuq şorbası</div>
+                                <div class="lunch-box-item">02 Mərci şorbası</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Salatlar</div>
+                                <div class="lunch-box-item">01 Çoban salatı</div>
+                                <div class="lunch-box-item">02 Vitamin salatı</div>
+                                <div class="lunch-box-item">03 Toyuq salatı</div>
+                                <div class="lunch-box-item">04 Kök salatı</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Əsas yeməklər</div>
+                                <div class="lunch-box-item">01 Toyuq kotleti</div>
+                                <div class="lunch-box-item">02 Toyuq sobada</div>
+                                <div class="lunch-box-item">03 Ət qulyaji</div>
+                                <div class="lunch-box-item">04 Tomat sousunda köftə</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Qarnirlər</div>
+                                <div class="lunch-box-item">01 Düyü</div>
+                                <div class="lunch-box-item">02 Qarabaşaq</div>
+                                <div class="lunch-box-item">03 Penne makaronu</div>
+                                <div class="lunch-box-item">04 Bulqur</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">İçkilər</div>
+                                <div class="lunch-box-item">01 Ayran</div>
+                                <div class="lunch-box-item">02 Kompot</div>
+                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
+                                <div class="lunch-box-item">04 Su</div>
+                            </li>
+                        </ul>
+                        <ul class="lunch-box" id="lunch-box-2">
+                            <li>
+                                <div class="lunch-box-title">Soup</div>
+                                <div class="lunch-box-item">01 Köftəli sup</div>
+                                <div class="lunch-box-item">02 Tərəvəzli krem-sup</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Salatlar</div>
+                                <div class="lunch-box-item">01 Çoban salatı</div>
+                                <div class="lunch-box-item">02 Miraj salatı</div>
+                                <div class="lunch-box-item">03 Yaqut salatı</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Əsas yeməklər</div>
+                                <div class="lunch-box-item">01 Izmir köftə</div>
+                                <div class="lunch-box-item">02 Toyuq şnitsel</div>
+                                <div class="lunch-box-item">03 Tərəvəzli toyuq sote</div>
+                                <div class="lunch-box-item">04 Sobada bişmiş toyuq budu</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Qarnirlər</div>
+                                <div class="lunch-box-item">01 Tərəvəzli düyü</div>
+                                <div class="lunch-box-item">02 Kartof püresi</div>
+                                <div class="lunch-box-item">03 Meyhanə bulqur</div>
+                                <div class="lunch-box-item">04 Farfalle makaronu</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">İçkilər</div>
+                                <div class="lunch-box-item">01 Ayran</div>
+                                <div class="lunch-box-item">02 Kompot</div>
+                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
+                                <div class="lunch-box-item">04 Su</div>
+                            </li>
+                        </ul>
+                        <ul class="lunch-box" id="lunch-box-3">
+                            <li>
+                                <div class="lunch-box-title">Soup</div>
+                                <div class="lunch-box-item">01 Ət supu düyü ilə</div>
+                                <div class="lunch-box-item">02 Dovğa</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Salatlar</div>
+                                <div class="lunch-box-item">01 Yunan salatı</div>
+                                <div class="lunch-box-item">02 Lobya salatı</div>
+                                <div class="lunch-box-item">03 Kartof salatı</div>
+                                <div class="lunch-box-item">04 Kahı ilə salat</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Əsas yeməklər</div>
+                                <div class="lunch-box-item">01 Toyuq çığırtma</div>
+                                <div class="lunch-box-item">02 Buxarda bişmiş tərəvəzlər ile toyuq ruleti</div>
+                                <div class="lunch-box-item">03 Ət befstroqanov</div>
+                                <div class="lunch-box-item">04 Sobada bişmiş toyuq budu</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Qarnirlər</div>
+                                <div class="lunch-box-item">01 Düyü</div>
+                                <div class="lunch-box-item">02 Qarabaşaq</div>
+                                <div class="lunch-box-item">03 Buxarda bişmiş tərəvəzlər</div>
+                                <div class="lunch-box-item">04 Sobada bişmiş kartof</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">İçkilər</div>
+                                <div class="lunch-box-item">01 Ayran</div>
+                                <div class="lunch-box-item">02 Kompot</div>
+                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
+                                <div class="lunch-box-item">04 Su</div>
+                            </li>
+                        </ul>
+                        <ul class="lunch-box" id="lunch-box-4">
+                            <li>
+                                <div class="lunch-box-title">Soup</div>
+                                <div class="lunch-box-item">01 Borş</div>
+                                <div class="lunch-box-item">02 Yaşıl mərci</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Salatlar</div>
+                                <div class="lunch-box-item">01 Çoban salatı</div>
+                                <div class="lunch-box-item">02 Kələm salatı (mayonezli)</div>
+                                <div class="lunch-box-item">03 Gavalı ilə toyuq salatı</div>
+                                <div class="lunch-box-item">04 Tərəvəzli tay salatı</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Əsas yeməklər</div>
+                                <div class="lunch-box-item">01 Souslu toyuq qanadları</div>
+                                <div class="lunch-box-item">02 Bolonez souslu spagetti</div>
+                                <div class="lunch-box-item">03 Ləvəngi (toyuq)</div>
+                                <div class="lunch-box-item">04 Çoban qovurma</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Qarnirlər</div>
+                                <div class="lunch-box-item">01 Şüyüdlü düyü</div>
+                                <div class="lunch-box-item">02 Spagetti</div>
+                                <div class="lunch-box-item">03 Qızardılmış tərəvəzlər</div>
+                                <div class="lunch-box-item">04 Makaron</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">İçkilər</div>
+                                <div class="lunch-box-item">01 Ayran</div>
+                                <div class="lunch-box-item">02 Kompot</div>
+                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
+                                <div class="lunch-box-item">04 Su</div>
+                            </li>
+                        </ul>
+                        <ul class="lunch-box" id="lunch-box-5">
+                            <li>
+                                <div class="lunch-box-title">Soup</div>
+                                <div class="lunch-box-item">01 Reyhan ilə şorba</div>
+                                <div class="lunch-box-item">02 Yayla şorbası</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Salatlar</div>
+                                <div class="lunch-box-item">01 Çoban salatı</div>
+                                <div class="lunch-box-item">02 Paytaxt salatı</div>
+                                <div class="lunch-box-item">03 Özbək sayağı salat</div>
+                                <div class="lunch-box-item">04 Tərəvəzli lay-lay salat</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Əsas yeməklər</div>
+                                <div class="lunch-box-item">01 Pendirli bifşteks</div>
+                                <div class="lunch-box-item">02 Toyuq frikase</div>
+                                <div class="lunch-box-item">03 Ətli faxitos</div>
+                                <div class="lunch-box-item">04 Çoban qovurma</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">Qarnirlər</div>
+                                <div class="lunch-box-item">01 Düyü</div>
+                                <div class="lunch-box-item">02 Qarabaşaq</div>
+                                <div class="lunch-box-item">03 Makaron</div>
+                                <div class="lunch-box-item">04 Bulqur</div>
+                            </li>
+                            <li>
+                                <div class="lunch-box-title">İçkilər</div>
+                                <div class="lunch-box-item">01 Ayran</div>
+                                <div class="lunch-box-item">02 Kompot</div>
+                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
+                                <div class="lunch-box-item">04 Su</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lunch-box-img">
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Display menu items -->
@@ -35,7 +228,11 @@
             {% for menu_item in menu_items %}
                 <div class="menu-item" data-menu-item-id="{{ menu_item.id }}" data-category="{{ menu_item.subcategory_id }}">
                     <div class="menu-img">
-                        <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                        {% if menu_item.image %}
+                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                        {% else %}
+                             <img src="{% static 'assets/logo.png' %}" alt="logo">
+                        {% endif %}
                     </div>
                     <div class="menu-item-title"><a href="">{{ menu_item.name }}</a></div>
                     <div class="menu-item-description">{{ menu_item.description }}</div>

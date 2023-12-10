@@ -1,5 +1,4 @@
-<!-- pages/home.html -->
-{% extends 'base.html' %}
+{% load static i18n %}
 {% load static %}
 
 {% block body %}
@@ -11,11 +10,28 @@
                         </div>
                         <div class="nav-item">
                             <ul>
-                                <li><a href="/">Əsas</a></li>
-                                <li><a href="/menu">Menu</a></li>
-                                <li><a href="">Əlaqə</a></li>
-                                <li><a href="">Haqqımızda</a></li>
-                                <li><a href="">Blog</a></li>
+                                <li><a href="/">{% trans 'Əsas' %}</a></li>
+                                <li><a href="/menu">{% trans 'Menu' %}</a></li>
+                                <li><a href="">{% trans 'Əlaqə' %}</a></li>
+                                <li><a href="">{% trans 'Haqqımızda' %}</a></li>
+                                <li><a href="">{% trans 'Blog' %}</a></li>
+                                <li>
+                                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                                            <input name="next" type="hidden" value="{{ redirect_to }}">
+                                            <select name="language">
+                                                {% get_current_language as LANGUAGE_CODE %}
+                                                {% get_available_languages as LANGUAGES %}
+                                                {% get_language_info_list for LANGUAGES as languages %}
+                                                {% for language in languages %}
+                                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                                            selected{% endif %}>
+                                                        {{ language.name_local }} ({{ language.code }})
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                            <input type="submit" value="Go">
+                                        </form>
+                                    </li>
                             </ul>
                         </div>
                         <div class="sidebar" id="sidebar">
@@ -30,11 +46,11 @@
                                     <img src="{% static 'assets/logo-bg.png' %}" alt="">
                                 </div>
                                 <ul>
-                                    <li><a href="/">Əsas</a></li>
-                                    <li><a href="/menu">Menu</a></li>
-                                    <li><a href="">Əlaqə</a></li>
-                                    <li><a href="">Haqqımızda</a></li>
-                                    <li><a href="">Blog</a></li>
+                                    <li><a href="/">{% trans 'Əsas' %}</a></li>
+                                    <li><a href="/menu">{% trans 'Menu' %}</a></li>
+                                    <li><a href="">{% trans 'Əlaqə' %}</a></li>
+                                    <li><a href="">{% trans 'Haqqımızda' %}</a></li>
+                                    <li><a href="">{% trans 'Blog' %}</a></li>
                                 </ul>
                                 <div class="sidebar-btn">
                                     <button>Contact Us</button>

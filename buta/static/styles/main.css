@@ -11,6 +11,29 @@ body {
     overflow-x: hidden;
 }
 
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('path-to-your-custom-arrow-icon.png') no-repeat right center;
+    /* Add a custom arrow icon */
+    padding-right: 20px;
+    /* Adjust this value based on the width of your arrow icon */
+}
+
+.custom-select::-ms-expand {
+    display: none;
+}
+
+.flag-icon {
+    width: 24px;
+    /* Adjust the width of the flag icons */
+    height: 16px;
+    /* Adjust the height of the flag icons */
+    margin-right: 8px;
+    /* Add spacing between flag and language name */
+}
+
 .width-full {
     width: 40% !important;
 }
@@ -898,6 +921,37 @@ body {
     background-color: #45a049;
 }
 
+/* Lunch box */
+.lunch-box-right ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lunch-box-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-bottom: 1.5rem;
+}
+
+.lunch-box-item {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 8px 0;
+    color: #343A40;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.lunch-box-content {
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.lunch-box {
+    display: none;
+}
 
 /* Shop cart */
 .shopping-cart {
@@ -1279,6 +1333,12 @@ body {
     padding: 30px 40px;
     width: 40%;
     margin: auto;
+    cursor: grab;
+    transition: 0.3s all;
+}
+
+.review-box:active {
+    cursor: grabbing;
 }
 
 .review-name {

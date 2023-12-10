@@ -1,5 +1,6 @@
 <!-- pages/home.html -->
 {% extends 'base.html' %}
+{% load static i18n %}
 {% load static %}
 
 {% block body %}
@@ -8,11 +9,9 @@
             <div class="header-left">
                 {% include '../include/navBar.html' %}
                 <div class="header-info">
-                    <div class="header-title">Asılılıq <span>yaradan</span> dad</div>
-                    <div class="header-text">Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və
-                        sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble teabir fincanda əsl
-                        sehrdir, anları unikal və xüsusi edir.</div>
-                    <div class="header-link"><a href="">Menyunu araşdırın</a></div>
+                    <div class="header-title">{% trans 'Asılılıq' %} <span>{% trans 'yaradan' %}</span> {% trans 'dad' %}</div>
+                    <div class="header-text">{% trans 'Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble teabir fincanda əsl sehrdir, anları unikal və xüsusi edir.' %}</div>
+                    <div class="header-link"><a href="">{% trans 'Menyunu araşdırın' %}</a></div>
                 </div>
             </div>
             <div class="header-right">
@@ -47,7 +46,7 @@
                         </div>
                         <div class="advantages-box-right">
                             <div class="advantages-title">1k+</div>
-                            <div class="advantages-box-subtitle">5 ulduzlu reytinq</div>
+                            <div class="advantages-box-subtitle">{% translate '5 ulduzlu reytinq' %}</div>
                         </div>
                     </div>
                     <div class="advantages-box">
@@ -56,7 +55,7 @@
                         </div>
                         <div class="advantages-box-right">
                             <div class="advantages-title">15+</div>
-                            <div class="advantages-box-subtitle">Komanda üzvü</div>
+                            <div class="advantages-box-subtitle">{% trans 'Komanda üzvü' %}</div>
                         </div>
                     </div>
                     <div class="advantages-box">
@@ -65,7 +64,7 @@
                         </div>
                         <div class="advantages-box-right">
                             <div class="advantages-title">1.5k+</div>
-                            <div class="advantages-box-subtitle">Ziyarətçilərin sayı</div>
+                            <div class="advantages-box-subtitle">{% trans 'Ziyarətçilərin sayı' %}</div>
                         </div>
                     </div>
                 </div>
@@ -80,10 +79,9 @@
                     <img src="{% static 'assets/about.png' %}" alt="">
                 </div>
                 <div class="about-right">
-                    <div class="about-section">Niyə biz?</div>
-                    <div class="about-title">Dadımızın fərqli xüsusiyyətləri</div>
-                    <div class="about-text">Kreativ aşpazlarımız damaqda unudulmaz dad buraxmaq üçün hər bir detalı
-                        diqqətlə nəzərdən keçirir və təqdim edirlər.</div>
+                    <div class="about-section">{% trans 'Niyə biz?' %}</div>
+                    <div class="about-title">{% trans 'Dadımızın fərqli xüsusiyyətləri' %}</div>
+                    <div class="about-text">{% trans 'Kreativ aşpazlarımız damaqda unudulmaz dad buraxmaq üçün hər bir detalı diqqətlə nəzərdən keçirir və təqdim edirlər' %}.</div>
                     <div class="about-item-group">
                         <div class="about-item">
                             <div class="about-item-left">
@@ -92,9 +90,8 @@
                                 </div>
                             </div>
                             <div class="about-item-right">
-                                <div class="about-item-title">Yüksək Xidmət</div>
-                                <div class="about-item-subtitle">Biz xüsusi xidmətlə müstəsna ləzzətlər təklif edirik.
-                                </div>
+                                <div class="about-item-title">{% trans 'Yüksək Xidmət' %}</div>
+                                <div class="about-item-subtitle">{% trans 'Biz xüsusi xidmətlə müstəsna ləzzətlər təklif edirik.' %}</div>
                             </div>
                         </div>
                         <div class="about-item">
@@ -104,8 +101,8 @@
                                 </div>
                             </div>
                             <div class="about-item-right">
-                                <div class="about-item-title">Mövsümi ləzzətlər</div>
-                                <div class="about-item-subtitle">Təzə və mövsümə uyğun maddələr</div>
+                                <div class="about-item-title">{% trans 'Mövsümi ləzzətlər' %}</div>
+                                <div class="about-item-subtitle">{% trans 'Təzə və mövsümə uyğun maddələr' %}</div>
                             </div>
                         </div>
                         <div class="about-item">
@@ -115,9 +112,8 @@
                                 </div>
                             </div>
                             <div class="about-item-right">
-                                <div class="about-item-title">Kompleks Menyular</div>
-                                <div class="about-item-subtitle">Aşpazlarımızın xüsusi reseptləri ilə unikal dad
-                                    təcrübəsi təqdim edirik.</div>
+                                <div class="about-item-title">{% trans 'Kompleks Menyular' %}</div>
+                                <div class="about-item-subtitle">{% trans 'Aşpazlarımızın xüsusi reseptləri ilə unikal dad təcrübəsi təqdim edirik.' %}</div>
                             </div>
                         </div>
                     </div>
@@ -132,14 +128,14 @@
                 <div class="menu-left">
                 </div>
                 <div class="menu-right">
-                    <div class="menu-section">Menu</div>
-                    <div class="menu-title">Bizim unikal və yüksək keyfiyyətli dadlarımız.</div>
+                    <div class="menu-section">{% trans 'Menu' %}</div>
+                    <div class="menu-title">{% trans 'Bizim unikal və yüksək keyfiyyətli dadlarımız.' %}</div>
                     <div class="menu-slider-navigate">
                         <div class="slider-navigation-bar">
-                            <div class="slider-navigation-category" onclick="showSlider(1)">İçkilər</div>
-                            <div class="slider-navigation-category" onclick="showSlider(2)">Mal əti</div>
-                            <div class="slider-navigation-category" onclick="showSlider(3)">Qəlyanaltılar</div>
-                            <div class="slider-navigation-category" onclick="showSlider(4)">Saladlar</div>
+                            <div class="slider-navigation-category" onclick="showSlider(1)">{% trans 'İçkilər' %}</div>
+                            <div class="slider-navigation-category" onclick="showSlider(2)">{% trans 'Qarnirlər' %}</div>
+                            <div class="slider-navigation-category" onclick="showSlider(3)">{% trans 'Qəlyanaltılar' %}</div>
+                            <div class="slider-navigation-category" onclick="showSlider(4)">{% trans 'Saladlar' %}</div>
                         </div>
                         <div class="sliderIndicator">
                             <div class="slider-indicator" id="sliderIndicator"></div>
@@ -152,31 +148,31 @@
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
 
@@ -190,13 +186,13 @@
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="./assets/64f1c7b32eb32-Vanilla-flavored-tea.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
 
@@ -211,7 +207,7 @@
                                 <li class="splide__slide">
                                     <div class="menu-box">
                                         <img src="./assets/64f1c7da238f8-Tea with almond flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
+                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
                                     </div>
                                 </li>
                                 <li class="splide__slide">
@@ -318,9 +314,8 @@
                     </div>
 
                     <div class="menu-text">
-                        Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və sevindirənbubble tea
-                        sortunun müxtəlif variantlarını yaradırıq. Bizim bubble teabir fincanda əsl sehrdir, anları
-                        unikal və xüsusi edir.
+                        {% trans 'Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble teabir fincanda əsl sehrdir, anları unikal və xüsusi edir.' %}
+
                     </div>
                 </div>
             </div>
@@ -330,27 +325,27 @@
     <section>
         <div class="blog">
             <div class="blog-content">
-                <div class="blog-section">Blog</div>
-                <div class="blog-title">Zövq jurnalı</div>
+                <div class="blog-section">{% trans 'Blog' %}</div>
+                <div class="blog-title">{% trans 'Zövq jurnalı' %}</div>
                 <div class="blog-box-group">
                     <div class="blog-box blog-box-1">
-                        <div class="blog-box-date">Noyabr 11, 2023</div>
-                        <div class="blog-box-title">Buta taste cafenin açılış mərsimi keçirildi</div>
-                        <div class="blog-box-link"><a href="">Ətraflı oxu</a></div>
+                        <div class="blog-box-date">{% trans 'Noyabr 11, 2023' %}</div>
+                        <div class="blog-box-title">{% trans 'Buta taste cafenin açılış mərsimi keçirildi' %}</div>
+                        <div class="blog-box-link"><a href="">{% trans 'Ətraflı oxu' %}</a></div>
                     </div>
                     <div class="blog-box blog-box-1">
-                        <div class="blog-box-date">Noyabr 11, 2023</div>
-                        <div class="blog-box-title">Buta taste cafenin açılış mərsimi keçirildi</div>
-                        <div class="blog-box-link"><a href="">Ətraflı oxu</a></div>
+                        <div class="blog-box-date">{% trans 'Noyabr 11, 2023' %}</div>
+                        <div class="blog-box-title">{% trans 'Buta taste cafenin açılış mərsimi keçirildi' %}</div>
+                        <div class="blog-box-link"><a href="">{% trans 'Ətraflı oxu' %}</a></div>
                     </div>
                     <div class="blog-box blog-box-1">
-                        <div class="blog-box-date">Noyabr 11, 2023</div>
-                        <div class="blog-box-title">Buta taste cafenin açılış mərsimi keçirildi</div>
-                        <div class="blog-box-link"><a href="">Ətraflı oxu</a></div>
+                        <div class="blog-box-date">{% trans 'Noyabr 11, 2023' %}</div>
+                        <div class="blog-box-title">{% trans 'Buta taste cafenin açılış mərsimi keçirildi' %}</div>
+                        <div class="blog-box-link"><a href="">{% trans 'Ətraflı oxu' %}</a></div>
                     </div>
                 </div>
                 <div class="blog-btn">
-                    <a href="">Daha çox</a>
+                    <a href="">{% trans 'Daha çox' %}</a>
                 </div>
             </div>
         </div>
@@ -358,7 +353,7 @@
 
      <section>
         <div class="review">
-            <div class="review-title">Rəylər</div>
+            <div class="review-title">{% trans 'Rəylər' %}</div>
             <div class="review-content">
                 <div id="userReviewsSlider" class="splide">
                     <div class="splide__track">
@@ -377,7 +372,7 @@
                         </ul>
                     </div>
                 </div>
-                <button class="open-review-form" id="openReviewForm">Rəy yazın</button>
+                <button class="open-review-form" id="openReviewForm">{% trans 'Rəy yazın' %}</button>
             </div>
         </div>
     </section>
@@ -386,7 +381,7 @@
     <div class="popup__blur"></div>
     <div class="review-form-box-content">
         <div class="review-form-box-content-top">
-                <div class="review-form-box-title">Rəy bildirin</div>
+                <div class="review-form-box-title">{% trans 'Rəy bildirin' %}</div>
                 <button id="closeReviewForm">X</button>
         </div>
         <form class="review-form-box-form" method="post" action="{% url 'home' %}">
@@ -402,7 +397,7 @@
             <div class="review-form-item">
                 {{ form.text }}
             </div>
-            <button type="submit">Göndər</button>
+            <button type="submit">{% trans 'Göndər' %}</button>
         </form>
     </div>
 </div>

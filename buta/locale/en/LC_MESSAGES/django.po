@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-10 15:26+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\include\footer.html:16 .\templates\include\navBar.html:13
+#: .\templates\include\navBar.html:49
+msgid "Əsas"
+msgstr "Home"
+
+#: .\templates\include\footer.html:17 .\templates\include\navBar.html:14
+#: .\templates\include\navBar.html:50 .\templates\pages\home.html:131
+msgid "Menu"
+msgstr "Menu"
+
+#: .\templates\include\footer.html:18 .\templates\include\navBar.html:15
+#: .\templates\include\navBar.html:51
+msgid "Əlaqə"
+msgstr "Contact us"
+
+#: .\templates\include\footer.html:19 .\templates\include\navBar.html:16
+#: .\templates\include\navBar.html:52
+msgid "Haqqımızda"
+msgstr "About us"
+
+#: .\templates\include\footer.html:20 .\templates\include\navBar.html:17
+#: .\templates\include\navBar.html:53 .\templates\pages\home.html:328
+msgid "Blog"
+msgstr "Blog"
+
+#: .\templates\pages\home.html:12
+msgid "Asılılıq"
+msgstr "Addictive"
+
+#: .\templates\pages\home.html:12
+msgid "yaradan"
+msgstr "taste"
+
+#: .\templates\pages\home.html:12
+msgid "dad"
+msgstr "."
+
+#: .\templates\pages\home.html:13 .\templates\pages\home.html:317
+msgid ""
+"Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və "
+"sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble "
+"teabir fincanda əsl sehrdir, anları unikal və xüsusi edir."
+msgstr ""
+"With great pleasure, we create different varieties of bubble tea that will "
+"uplift and delight every visitor. Our bubble tea is real magic in a cup, "
+"making moments unique and special"
+
+#: .\templates\pages\home.html:14
+msgid "Menyunu araşdırın"
+msgstr "Explore the menu"
+
+#: .\templates\pages\home.html:49
+msgid "5 ulduzlu reytinq"
+msgstr "5 star rating"
+
+#: .\templates\pages\home.html:58
+msgid "Komanda üzvü"
+msgstr "Team member"
+
+#: .\templates\pages\home.html:67
+msgid "Ziyarətçilərin sayı"
+msgstr "Number of visitors"
+
+#: .\templates\pages\home.html:82
+msgid "Niyə biz?"
+msgstr "Why us?"
+
+#: .\templates\pages\home.html:83
+msgid "Dadımızın fərqli xüsusiyyətləri"
+msgstr "Different characteristics of our taste"
+
+#: .\templates\pages\home.html:84
+msgid ""
+"Kreativ aşpazlarımız damaqda unudulmaz dad buraxmaq üçün hər bir detalı "
+"diqqətlə nəzərdən keçirir və təqdim edirlər"
+msgstr ""
+"Our creative chefs carefully consider and present every detail to leave an "
+"unforgettable taste on the palate"
+
+#: .\templates\pages\home.html:93
+msgid "Yüksək Xidmət"
+msgstr "High Service"
+
+#: .\templates\pages\home.html:94
+msgid "Biz xüsusi xidmətlə müstəsna ləzzətlər təklif edirik."
+msgstr "We offer exceptional flavors with personalized service."
+
+#: .\templates\pages\home.html:104
+msgid "Mövsümi ləzzətlər"
+msgstr "Seasonal flavors"
+
+#: .\templates\pages\home.html:105
+msgid "Təzə və mövsümə uyğun maddələr"
+msgstr "Fresh and seasonal ingredients"
+
+#: .\templates\pages\home.html:115
+msgid "Kompleks Menyular"
+msgstr "Complex Menus"
+
+#: .\templates\pages\home.html:116
+msgid ""
+"Aşpazlarımızın xüsusi reseptləri ilə unikal dad təcrübəsi təqdim edirik."
+msgstr ""
+"We offer a unique taste experience with the special recipes of our chefs."
+
+#: .\templates\pages\home.html:132
+msgid "Bizim unikal və yüksək keyfiyyətli dadlarımız."
+msgstr "Our unique and high quality flavors."
+
+#: .\templates\pages\home.html:135
+msgid "İçkilər"
+msgstr "Drinks"
+
+#: .\templates\pages\home.html:136
+msgid "Qarnirlər"
+msgstr "Side dishes"
+
+#: .\templates\pages\home.html:137
+msgid "Qəlyanaltılar"
+msgstr "Snacks"
+
+#: .\templates\pages\home.html:138
+msgid "Saladlar"
+msgstr "Salads"
+
+#: .\templates\pages\home.html:151 .\templates\pages\home.html:157
+#: .\templates\pages\home.html:163 .\templates\pages\home.html:169
+#: .\templates\pages\home.html:175 .\templates\pages\home.html:189
+#: .\templates\pages\home.html:195 .\templates\pages\home.html:210
+#: .\templates\pages\home.html:334 .\templates\pages\home.html:339
+#: .\templates\pages\home.html:344
+msgid "Ətraflı oxu"
+msgstr "Reed more"
+
+#: .\templates\pages\home.html:329
+msgid "Zövq jurnalı"
+msgstr "Pleasure magazine"
+
+#: .\templates\pages\home.html:332 .\templates\pages\home.html:337
+#: .\templates\pages\home.html:342
+msgid "Noyabr 11, 2023"
+msgstr "November 11, 2023"
+
+#: .\templates\pages\home.html:333 .\templates\pages\home.html:338
+#: .\templates\pages\home.html:343
+msgid "Buta taste cafenin açılış mərsimi keçirildi"
+msgstr "The opening ceremony of Buta taste cafe was held"
+
+#: .\templates\pages\home.html:348
+msgid "Daha çox"
+msgstr "More"
+
+#: .\templates\pages\home.html:356
+msgid "Rəylər"
+msgstr "Reviews"
+
+#: .\templates\pages\home.html:375
+msgid "Rəy yazın"
+msgstr "Write a review"
+
+#: .\templates\pages\home.html:384
+msgid "Rəy bildirin"
+msgstr "Give feedback"
+
+#: .\templates\pages\home.html:400
+msgid "Göndər"
+msgstr "Send"

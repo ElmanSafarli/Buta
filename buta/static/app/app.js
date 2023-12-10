@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 // Hide the block with class "business-lunch" for other categories
                 document.querySelector('.business-lunch').style.display = 'none';
-                menuItems.style.display = 'block';
+                menuItems.style.display = 'flex';
             }
         });
     });
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.subcategory-item').forEach(function (subcategory) {
             var subcategoryCategory = subcategory.getAttribute('data-category');
             if (subcategoryCategory === category) {
-                subcategory.style.display = 'block';
+                subcategory.style.display = 'flex';
             } else {
                 subcategory.style.display = 'none';
             }
@@ -482,3 +482,13 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleDisplay('.review-form-box-content');
     });
 });
+
+function showLunchBox(dayNumber) {
+    // Hide all lunch boxes
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById(`lunch-box-${i}`).style.display = 'none';
+    }
+
+    // Show the selected lunch box
+    document.getElementById(`lunch-box-${dayNumber}`).style.display = 'block';
+}

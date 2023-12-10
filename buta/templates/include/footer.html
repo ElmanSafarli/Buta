@@ -1,5 +1,6 @@
 <!-- include/footer.html -->
 {% extends 'base.html' %}
+{% load static i18n %}
 {% load static %}
 
 {% block body %}
@@ -12,11 +13,11 @@
                     </div>
                     <div class="footer-item-group">
                         <ul>
-                            <li><a href="/">Əsas</a></li>
-                            <li><a href="./menu">Menu</a></li>
-                            <li><a href="">Əlaqə</a></li>
-                            <li><a href="">Haqqımızda</a></li>
-                            <li><a href="">Blog</a></li>
+                            <li><a href="/">{% trans 'Əsas' %}</a></li>
+                                <li><a href="/menu">{% trans 'Menu' %}</a></li>
+                                <li><a href="">{% trans 'Əlaqə' %}</a></li>
+                                <li><a href="">{% trans 'Haqqımızda' %}</a></li>
+                                <li><a href="">{% trans 'Blog' %}</a></li>
                         </ul>
                     </div>
                 </div>
