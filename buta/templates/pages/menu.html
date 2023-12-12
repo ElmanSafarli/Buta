@@ -39,185 +39,370 @@
                                 <li><button onclick="showLunchBox(5)">Cümə</button></li>
                             </ul>
                         </div>
+                        <div class="menu__price">
+                            <img src="{% static 'assets/star-red.svg' %}" alt="">
+                            <p>7₼</p>
+                        </div>
                     </div>
                     <div class="lunch-box-right">
-                        <ul class="lunch-box" id="lunch-box-1">
-                            <li>
-                                <div class="lunch-box-title">Soup</div>
-                                <div class="lunch-box-item">01 Toyuq şorbası</div>
-                                <div class="lunch-box-item">02 Mərci şorbası</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Salatlar</div>
-                                <div class="lunch-box-item">01 Çoban salatı</div>
-                                <div class="lunch-box-item">02 Vitamin salatı</div>
-                                <div class="lunch-box-item">03 Toyuq salatı</div>
-                                <div class="lunch-box-item">04 Kök salatı</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Əsas yeməklər</div>
-                                <div class="lunch-box-item">01 Toyuq kotleti</div>
-                                <div class="lunch-box-item">02 Toyuq sobada</div>
-                                <div class="lunch-box-item">03 Ət qulyaji</div>
-                                <div class="lunch-box-item">04 Tomat sousunda köftə</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Qarnirlər</div>
-                                <div class="lunch-box-item">01 Düyü</div>
-                                <div class="lunch-box-item">02 Qarabaşaq</div>
-                                <div class="lunch-box-item">03 Penne makaronu</div>
-                                <div class="lunch-box-item">04 Bulqur</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">İçkilər</div>
-                                <div class="lunch-box-item">01 Ayran</div>
-                                <div class="lunch-box-item">02 Kompot</div>
-                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
-                                <div class="lunch-box-item">04 Su</div>
-                            </li>
-                        </ul>
-                        <ul class="lunch-box" id="lunch-box-2">
-                            <li>
-                                <div class="lunch-box-title">Soup</div>
-                                <div class="lunch-box-item">01 Köftəli sup</div>
-                                <div class="lunch-box-item">02 Tərəvəzli krem-sup</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Salatlar</div>
-                                <div class="lunch-box-item">01 Çoban salatı</div>
-                                <div class="lunch-box-item">02 Miraj salatı</div>
-                                <div class="lunch-box-item">03 Yaqut salatı</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Əsas yeməklər</div>
-                                <div class="lunch-box-item">01 Izmir köftə</div>
-                                <div class="lunch-box-item">02 Toyuq şnitsel</div>
-                                <div class="lunch-box-item">03 Tərəvəzli toyuq sote</div>
-                                <div class="lunch-box-item">04 Sobada bişmiş toyuq budu</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Qarnirlər</div>
-                                <div class="lunch-box-item">01 Tərəvəzli düyü</div>
-                                <div class="lunch-box-item">02 Kartof püresi</div>
-                                <div class="lunch-box-item">03 Meyhanə bulqur</div>
-                                <div class="lunch-box-item">04 Farfalle makaronu</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">İçkilər</div>
-                                <div class="lunch-box-item">01 Ayran</div>
-                                <div class="lunch-box-item">02 Kompot</div>
-                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
-                                <div class="lunch-box-item">04 Su</div>
-                            </li>
-                        </ul>
-                        <ul class="lunch-box" id="lunch-box-3">
-                            <li>
-                                <div class="lunch-box-title">Soup</div>
-                                <div class="lunch-box-item">01 Ət supu düyü ilə</div>
-                                <div class="lunch-box-item">02 Dovğa</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Salatlar</div>
-                                <div class="lunch-box-item">01 Yunan salatı</div>
-                                <div class="lunch-box-item">02 Lobya salatı</div>
-                                <div class="lunch-box-item">03 Kartof salatı</div>
-                                <div class="lunch-box-item">04 Kahı ilə salat</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Əsas yeməklər</div>
-                                <div class="lunch-box-item">01 Toyuq çığırtma</div>
-                                <div class="lunch-box-item">02 Buxarda bişmiş tərəvəzlər ile toyuq ruleti</div>
-                                <div class="lunch-box-item">03 Ət befstroqanov</div>
-                                <div class="lunch-box-item">04 Sobada bişmiş toyuq budu</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Qarnirlər</div>
-                                <div class="lunch-box-item">01 Düyü</div>
-                                <div class="lunch-box-item">02 Qarabaşaq</div>
-                                <div class="lunch-box-item">03 Buxarda bişmiş tərəvəzlər</div>
-                                <div class="lunch-box-item">04 Sobada bişmiş kartof</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">İçkilər</div>
-                                <div class="lunch-box-item">01 Ayran</div>
-                                <div class="lunch-box-item">02 Kompot</div>
-                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
-                                <div class="lunch-box-item">04 Su</div>
-                            </li>
-                        </ul>
-                        <ul class="lunch-box" id="lunch-box-4">
-                            <li>
-                                <div class="lunch-box-title">Soup</div>
-                                <div class="lunch-box-item">01 Borş</div>
-                                <div class="lunch-box-item">02 Yaşıl mərci</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Salatlar</div>
-                                <div class="lunch-box-item">01 Çoban salatı</div>
-                                <div class="lunch-box-item">02 Kələm salatı (mayonezli)</div>
-                                <div class="lunch-box-item">03 Gavalı ilə toyuq salatı</div>
-                                <div class="lunch-box-item">04 Tərəvəzli tay salatı</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Əsas yeməklər</div>
-                                <div class="lunch-box-item">01 Souslu toyuq qanadları</div>
-                                <div class="lunch-box-item">02 Bolonez souslu spagetti</div>
-                                <div class="lunch-box-item">03 Ləvəngi (toyuq)</div>
-                                <div class="lunch-box-item">04 Çoban qovurma</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Qarnirlər</div>
-                                <div class="lunch-box-item">01 Şüyüdlü düyü</div>
-                                <div class="lunch-box-item">02 Spagetti</div>
-                                <div class="lunch-box-item">03 Qızardılmış tərəvəzlər</div>
-                                <div class="lunch-box-item">04 Makaron</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">İçkilər</div>
-                                <div class="lunch-box-item">01 Ayran</div>
-                                <div class="lunch-box-item">02 Kompot</div>
-                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
-                                <div class="lunch-box-item">04 Su</div>
-                            </li>
-                        </ul>
-                        <ul class="lunch-box" id="lunch-box-5">
-                            <li>
-                                <div class="lunch-box-title">Soup</div>
-                                <div class="lunch-box-item">01 Reyhan ilə şorba</div>
-                                <div class="lunch-box-item">02 Yayla şorbası</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Salatlar</div>
-                                <div class="lunch-box-item">01 Çoban salatı</div>
-                                <div class="lunch-box-item">02 Paytaxt salatı</div>
-                                <div class="lunch-box-item">03 Özbək sayağı salat</div>
-                                <div class="lunch-box-item">04 Tərəvəzli lay-lay salat</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Əsas yeməklər</div>
-                                <div class="lunch-box-item">01 Pendirli bifşteks</div>
-                                <div class="lunch-box-item">02 Toyuq frikase</div>
-                                <div class="lunch-box-item">03 Ətli faxitos</div>
-                                <div class="lunch-box-item">04 Çoban qovurma</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">Qarnirlər</div>
-                                <div class="lunch-box-item">01 Düyü</div>
-                                <div class="lunch-box-item">02 Qarabaşaq</div>
-                                <div class="lunch-box-item">03 Makaron</div>
-                                <div class="lunch-box-item">04 Bulqur</div>
-                            </li>
-                            <li>
-                                <div class="lunch-box-title">İçkilər</div>
-                                <div class="lunch-box-item">01 Ayran</div>
-                                <div class="lunch-box-item">02 Kompot</div>
-                                <div class="lunch-box-item">03 Kola / fanta / sprite</div>
-                                <div class="lunch-box-item">04 Su</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="lunch-box-img">
-                        <img src="" alt="">
+                        <div class="lun-box-result">
+                            <ul class="lunch-box" id="lunch-box-1">
+                                <li>
+                                    <div class="lunch-box-title">Soup</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup1.png' %}')">
+                                        01 Toyuq şorbası</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup2.png' %}')">
+                                        02 Mərci şorbası</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Salatlar</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad1.png' %}')">01
+                                        Çoban salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad2.png' %}')">02
+                                        Vitamin salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad3.png' %}')">03
+                                        Toyuq salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad4.png' %}')">04
+                                        Kök salatı</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Əsas yeməklər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas1.png' %}')">
+                                        01
+                                        Toyuq kotleti</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/toyuq2.png' %}')">02
+                                        Toyuq sobada</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/toyuq3.png' %}')">03
+                                        Ət qulyaji</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/toyuq4.png' %}')">04
+                                        Tomat sousunda köftə</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Qarnirlər</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir1.png' %}')">01
+                                        Düyü</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir2.png' %}')">02
+                                        Qarabaşaq</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir3.png' %}')">03
+                                        Penne makaronu</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir4.png' %}')">04
+                                        Bulqur</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">İçkilər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/ayran.png' %}')">
+                                        01
+                                        Ayran</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/compot.png' %}')">02
+                                        Kompot</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/cola.png' %}')">
+                                        03
+                                        Kola / fanta / sprite</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/su.png' %}')">04
+                                        Su
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="lunch-box" id="lunch-box-2">
+                                <li>
+                                    <div class="lunch-box-title">Soup</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup3.png' %}')">
+                                        01
+                                        Köftəli sup</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup4.png' %}')">
+                                        02
+                                        Tərəvəzli krem-sup</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Salatlar</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad1.png' %}')">01
+                                        Çoban salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad5.png' %}')">02
+                                        Çuğundur salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad3.png' %}')">03
+                                        Miraj salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad6.png' %}')">04
+                                        Yaqut salatı</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Əsas yeməklər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas2.png' %}')">
+                                        01
+                                        Izmir köftə</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas1.png' %}')">
+                                        02
+                                        Toyuq şnitsel</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas3.png' %}')">
+                                        03
+                                        Tərəvəzli toyuq sote</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/toyuq2.png' %}')">04
+                                        Sobada bişmiş toyuq budu</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Qarnirlər</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir5.png' %}')">01
+                                        Tərəvəzli düyü</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir6.png' %}')">02
+                                        Kartof püresi</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir4.png' %}')">03
+                                        Meyhanə bulqur</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir7.png' %}')">04
+                                        Farfalle makaronu</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">İçkilər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/ayran.png' %}')">
+                                        01
+                                        Ayran</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/compot.png' %}')">02
+                                        Kompot</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/cola.png' %}')">
+                                        03
+                                        Kola / fanta / sprite</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/su.png' %}')">04
+                                        Su
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="lunch-box" id="lunch-box-3">
+                                <li>
+                                    <div class="lunch-box-title">Soup</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup3.png' %}')">
+                                        01
+                                        Ət supu düyü ilə</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup4.png' %}')">
+                                        02
+                                        Dovğa</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Salatlar</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir7.png' %}')">01
+                                        Yunan salatı</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        02
+                                        Lobya salatı</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        03
+                                        Kartof salatı</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        04
+                                        Kahı ilə salat</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Əsas yeməklər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        01
+                                        Toyuq çığırtma</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        02o
+                                        Buxarda bişmiş tərəvəzlər ile toyuq ruleti</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas4.png' %}')">
+                                        03
+                                        Ət befstroqanov</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas5.png' %}')">
+                                        04
+                                        Ət kotleti</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Qarnirlər</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir1.png' %}')">01
+                                        Düyü</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir2.png' %}')">02
+                                        Qarabaşaq</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        03
+                                        Buxarda bişmiş tərəvəzlər</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir8.' %}png')">04
+                                        Sobada bişmiş kartof</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">İçkilər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/ayran.png' %}')">
+                                        01
+                                        Ayran</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/compot.png' %}')">02
+                                        Kompot</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/cola.png' %}')">
+                                        03
+                                        Kola / fanta / sprite</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/su.png' %}')">04
+                                        Su
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="lunch-box" id="lunch-box-4">
+                                <li>
+                                    <div class="lunch-box-title">Soup</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup5.png' %}')">
+                                        01
+                                        Borş</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/soup6.png' %}')">
+                                        02
+                                        Yaşıl mərci</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Salatlar</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salat1.png' %}')">01
+                                        Çoban salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salat8.png' %}')">02
+                                        Kələm salatı (mayonezli)</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salat9.png' %}')">03
+                                        Gavalı ilə toyuq salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salat10.png' %}')">04
+                                        Tərəvəzli tay salatı</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Əsas yeməklər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas6.png' %}')">
+                                        01
+                                        Souslu toyuq qanadları</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas7.png' %}')">
+                                        02
+                                        Bolonez souslu spagetti</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas8.png' %}')">
+                                        03
+                                        Ləvəngi (toyuq)</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/esas9.png' %}')">
+                                        04
+                                        Çoban qovurma</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Qarnirlər</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir9.png' %}')">01
+                                        Şüyüdlü düyü</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir10.png' %}')">
+                                        02 Spagetti</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir11.png' %}')">
+                                        03 Qızardılmış tərəvəzlər</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir10.png' %}')">
+                                        04 Makaron</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">İçkilər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/ayran.png' %}')">
+                                        01
+                                        Ayran</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', './assets/compot.png')">02
+                                        Kompot</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/cola.png' %}')">
+                                        03
+                                        Kola / fanta / sprite</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/su.png' %}')">04
+                                        Su
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="lunch-box" id="lunch-box-5">
+                                <li>
+                                    <div class="lunch-box-title">Soup</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        01
+                                        Reyhan ilə şorba</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        02
+                                        Yayla şorbası</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Salatlar</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad1.' %}png')">01
+                                        Çoban salatı</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/salad1.png' %}')">02
+                                        Paytaxt salatı</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        03
+                                        Özbək sayağı salat</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        04
+                                        Tərəvəzli lay-lay salat</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Əsas yeməklər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        01
+                                        Pendirli bifşteks</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        02
+                                        Toyuq frikase</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        03
+                                        Ətli faxitos</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/logo.png' %}')">
+                                        04
+                                        Çoban qovurma</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">Qarnirlər</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir1.png' %}')">01
+                                        Düyü</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir2.png' %}')">02
+                                        Qarabaşaq</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir10.png' %}')">
+                                        03 Makaron</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/qarnir4.png' %}')">04
+                                        Bulqur</div>
+                                </li>
+                                <li>
+                                    <div class="lunch-box-title">İçkilər</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/ayran.png' %}')">
+                                        01
+                                        Ayran</div>
+                                    <div class="lunch-box-item"
+                                        onclick="updateImage('imgLunch', '{% static 'assets/compot.png' %}')">02
+                                        Kompot</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/cola.png' %}')">
+                                        03
+                                        Kola / fanta / sprite</div>
+                                    <div class="lunch-box-item" onclick="updateImage('imgLunch', '{% static 'assets/su.png' %}')">04
+                                        Su
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lunch-box-img">
+                            <img src="" alt="" id="imgLunch">
+                        </div>
                     </div>
                 </div>
             </div>

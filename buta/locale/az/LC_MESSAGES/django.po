@@ -20,121 +20,121 @@ msgstr ""
 #: .\templates\include\footer.html:16 .\templates\include\navBar.html:13
 #: .\templates\include\navBar.html:49
 msgid "Əsas"
-msgstr ""
+msgstr "Əsas"
 
 #: .\templates\include\footer.html:17 .\templates\include\navBar.html:14
 #: .\templates\include\navBar.html:50 .\templates\pages\home.html:131
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: .\templates\include\footer.html:18 .\templates\include\navBar.html:15
 #: .\templates\include\navBar.html:51
 msgid "Əlaqə"
-msgstr ""
+msgstr "Əlaqə"
 
 #: .\templates\include\footer.html:19 .\templates\include\navBar.html:16
 #: .\templates\include\navBar.html:52
 msgid "Haqqımızda"
-msgstr ""
+msgstr "Haqqımızda"
 
 #: .\templates\include\footer.html:20 .\templates\include\navBar.html:17
 #: .\templates\include\navBar.html:53 .\templates\pages\home.html:328
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #: .\templates\pages\home.html:12
 msgid "Asılılıq"
-msgstr ""
+msgstr "Asılılıq"
 
 #: .\templates\pages\home.html:12
 msgid "yaradan"
-msgstr ""
+msgstr "yaradan"
 
 #: .\templates\pages\home.html:12
 msgid "dad"
-msgstr ""
+msgstr "dad"
 
 #: .\templates\pages\home.html:13 .\templates\pages\home.html:317
 msgid ""
 "Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və "
 "sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble "
 "teabir fincanda əsl sehrdir, anları unikal və xüsusi edir."
-msgstr ""
+msgstr "Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble teabir fincanda əsl sehrdir, anları unikal və xüsusi edir."
 
 #: .\templates\pages\home.html:14
 msgid "Menyunu araşdırın"
-msgstr ""
+msgstr "Menyunu araşdırın"
 
 #: .\templates\pages\home.html:49
 msgid "5 ulduzlu reytinq"
-msgstr ""
+msgstr "5 ulduzlu reytinq"
 
 #: .\templates\pages\home.html:58
 msgid "Komanda üzvü"
-msgstr ""
+msgstr "Komanda üzvü"
 
 #: .\templates\pages\home.html:67
 msgid "Ziyarətçilərin sayı"
-msgstr ""
+msgstr "Ziyarətçilərin sayı"
 
 #: .\templates\pages\home.html:82
 msgid "Niyə biz?"
-msgstr ""
+msgstr "Niyə biz?"
 
 #: .\templates\pages\home.html:83
 msgid "Dadımızın fərqli xüsusiyyətləri"
-msgstr ""
+msgstr "Dadımızın fərqli xüsusiyyətləri"
 
 #: .\templates\pages\home.html:84
 msgid ""
 "Kreativ aşpazlarımız damaqda unudulmaz dad buraxmaq üçün hər bir detalı "
 "diqqətlə nəzərdən keçirir və təqdim edirlər"
-msgstr ""
+msgstr "Kreativ aşpazlarımız damaqda unudulmaz dad buraxmaq üçün hər bir detalı diqqətlə nəzərdən keçirir və təqdim edirlər"
 
 #: .\templates\pages\home.html:93
 msgid "Yüksək Xidmət"
-msgstr ""
+msgstr "Yüksək Xidmət"
 
 #: .\templates\pages\home.html:94
 msgid "Biz xüsusi xidmətlə müstəsna ləzzətlər təklif edirik."
-msgstr ""
+msgstr "Biz xüsusi xidmətlə müstəsna ləzzətlər təklif edirik."
 
 #: .\templates\pages\home.html:104
 msgid "Mövsümi ləzzətlər"
-msgstr ""
+msgstr "Mövsümi ləzzətlər"
 
 #: .\templates\pages\home.html:105
 msgid "Təzə və mövsümə uyğun maddələr"
-msgstr ""
+msgstr "Təzə və mövsümə uyğun maddələr"
 
 #: .\templates\pages\home.html:115
 msgid "Kompleks Menyular"
-msgstr ""
+msgstr "Kompleks Menyular"
 
 #: .\templates\pages\home.html:116
 msgid ""
 "Aşpazlarımızın xüsusi reseptləri ilə unikal dad təcrübəsi təqdim edirik."
-msgstr ""
+msgstr "Aşpazlarımızın xüsusi reseptləri ilə unikal dad təcrübəsi təqdim edirik."
 
 #: .\templates\pages\home.html:132
 msgid "Bizim unikal və yüksək keyfiyyətli dadlarımız."
-msgstr ""
+msgstr "Bizim unikal və yüksək keyfiyyətli dadlarımız"
 
 #: .\templates\pages\home.html:135
 msgid "İçkilər"
-msgstr ""
+msgstr "İçkilər"
 
 #: .\templates\pages\home.html:136
 msgid "Qarnirlər"
-msgstr ""
+msgstr "Qarnirlər"
 
 #: .\templates\pages\home.html:137
 msgid "Qəlyanaltılar"
-msgstr ""
+msgstr "Qəlyanaltılar"
 
 #: .\templates\pages\home.html:138
 msgid "Saladlar"
-msgstr ""
+msgstr "Saladlar"
 
 #: .\templates\pages\home.html:151 .\templates\pages\home.html:157
 #: .\templates\pages\home.html:163 .\templates\pages\home.html:169
@@ -143,38 +143,38 @@ msgstr ""
 #: .\templates\pages\home.html:334 .\templates\pages\home.html:339
 #: .\templates\pages\home.html:344
 msgid "Ətraflı oxu"
-msgstr ""
+msgstr "Ətraflı oxu"
 
 #: .\templates\pages\home.html:329
 msgid "Zövq jurnalı"
-msgstr ""
+msgstr "Zövq jurnalı"
 
 #: .\templates\pages\home.html:332 .\templates\pages\home.html:337
 #: .\templates\pages\home.html:342
 msgid "Noyabr 11, 2023"
-msgstr ""
+msgstr "Noyabr 11, 2023"
 
 #: .\templates\pages\home.html:333 .\templates\pages\home.html:338
 #: .\templates\pages\home.html:343
 msgid "Buta taste cafenin açılış mərsimi keçirildi"
-msgstr ""
+msgstr "Buta taste cafenin açılış mərsimi keçirildi"
 
 #: .\templates\pages\home.html:348
 msgid "Daha çox"
-msgstr ""
+msgstr "Daha çox"
 
 #: .\templates\pages\home.html:356
 msgid "Rəylər"
-msgstr ""
+msgstr "Rəylər"
 
 #: .\templates\pages\home.html:375
 msgid "Rəy yazın"
-msgstr ""
+msgstr "Rəy yazın"
 
 #: .\templates\pages\home.html:384
 msgid "Rəy bildirin"
-msgstr ""
+msgstr "Rəy bildirin"
 
 #: .\templates\pages\home.html:400
 msgid "Göndər"
-msgstr ""
+msgstr "Göndər"

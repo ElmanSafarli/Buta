@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (categoryName === '2') {
                 // Show the block with class "business-lunch"
                 document.querySelector('.business-lunch').style.display = 'block';
-
                 menuItems.style.display = 'none';
             } else {
                 // Hide the block with class "business-lunch" for other categories
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var cart = JSON.parse(localStorage.getItem('cart')) || {};
         cart[itemId] = (cart[itemId] || 0) + quantity;
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log('Added to cart:', { itemId, quantity, cart });
+        // console.log('Added to cart:', { itemId, quantity, cart });
         return cart;
     }
 
@@ -58,6 +57,15 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartCount();
     }
 
+    function loadCartData() {
+        var cart = JSON.parse(localStorage.getItem('cart')) || {};
+        updateCartCount();
+        updateCartDisplay();
+    }
+
+    // Load cart data when the page is loaded
+    loadCartData();
+
     function updateCartCount() {
         var cart = JSON.parse(localStorage.getItem('cart')) || {};
         var totalCount = Object.values(cart).reduce((acc, quantity) => acc + quantity, 0);
@@ -67,25 +75,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
     document.querySelectorAll('.subcategory-item').forEach(function (subcategory) {
         subcategory.addEventListener('click', function () {
             var clickedSubcategory = subcategory.getAttribute('data-subcategory');
+            var clickedCategory = subcategory.getAttribute('data-category');
 
-            // Hide all menu items
-            document.querySelectorAll('.menu-item').forEach(function (menuItem) {
-                menuItem.style.display = 'none';
-            });
+            // Show only the subcategories that belong to the clicked category
+            showSubcategories(clickedCategory);
 
             // Show only the menu items that belong to the clicked subcategory
             document.querySelectorAll('.menu-item').forEach(function (menuItem) {
                 var menuItemSubcategory = menuItem.getAttribute('data-category');
                 if (menuItemSubcategory === clickedSubcategory) {
                     menuItem.style.display = 'block';
+                } else {
+                    menuItem.style.display = 'none';
                 }
             });
-
-            // Show subcategories based on the clicked category or subcategory
-            showSubcategories(clickedSubcategory);
         });
     });
 
@@ -100,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
 
 
     document.querySelectorAll('.incrementBtn, .decrementBtn').forEach(function (button) {
@@ -484,11 +492,24 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function showLunchBox(dayNumber) {
-    // Hide all lunch boxes
+
     for (let i = 1; i <= 5; i++) {
         document.getElementById(`lunch-box-${i}`).style.display = 'none';
     }
 
-    // Show the selected lunch box
-    document.getElementById(`lunch-box-${dayNumber}`).style.display = 'block';
+    var selectedLunchBox = document.getElementById(`lunch-box-${dayNumber}`);
+    if (selectedLunchBox) {
+        selectedLunchBox.style.display = 'block';
+    }
+
 }
+
+function updateImage(imageId, imagePath) {
+    var imageElement = document.getElementById(imageId);
+    if (imageElement) {
+        imageElement.src = imagePath;
+    }
+}
+
+showLunchBox(1)
+updateImage('imgLunch', '{% static "assets/qarnir4.png" %}')

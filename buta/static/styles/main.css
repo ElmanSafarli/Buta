@@ -9,29 +9,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-}
-
-.custom-select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: url('path-to-your-custom-arrow-icon.png') no-repeat right center;
-    /* Add a custom arrow icon */
-    padding-right: 20px;
-    /* Adjust this value based on the width of your arrow icon */
-}
-
-.custom-select::-ms-expand {
-    display: none;
-}
-
-.flag-icon {
-    width: 24px;
-    /* Adjust the width of the flag icons */
-    height: 16px;
-    /* Adjust the height of the flag icons */
-    margin-right: 8px;
-    /* Add spacing between flag and language name */
+    max-width: 1700px;
 }
 
 .width-full {
@@ -646,6 +624,7 @@ body {
 }
 
 .subcategory-item {
+    display: block;
     padding: 18px 20px;
     margin-bottom: 8px;
     color: #343A40;
@@ -927,6 +906,10 @@ body {
     padding-left: 0;
 }
 
+.lunch-box-right ul li {
+    margin: 28px 0;
+}
+
 .lunch-box-title {
     font-size: 18px;
     font-weight: 600;
@@ -941,16 +924,170 @@ body {
     color: #343A40;
     margin-left: 10px;
     cursor: pointer;
+    border-bottom: 2px solid #343A40;
+    padding-bottom: 15px;
 }
 
 .lunch-box-content {
     display: flex;
     align-items: start;
     justify-content: space-around;
+    margin: 4% 0;
 }
 
 .lunch-box {
     display: none;
+}
+
+.lunch-box-weekday ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lunch-box-weekday ul li {
+    margin: 20px;
+}
+
+.lunch-box-weekday ul li button {
+    align-items: center;
+    background-color: #f1f1f1;
+    border: 2px solid #676c70;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #676c70;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.lunch-box-weekday ul li button:after {
+    background-color: #676c70;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+}
+
+.lunch-box-weekday ul li button:hover:after {
+    transform: translate(0, 0);
+}
+
+.lunch-box-weekday ul li button:active {
+    background-color: #F7F7F7;
+    outline: 0;
+}
+
+.lunch-box-weekday ul li button:hover {
+    outline: 0;
+}
+
+.lunch-box-right {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.lunch-box-img {
+    position: relative;
+}
+
+.lunch-box-img img {
+    position: absolute;
+    top: -5rem;
+    right: -60rem;
+    width: 650px;
+}
+
+.lun-box-result {
+    max-width: 52rem;
+    width: 520px;
+    position: absolute;
+    left: 30rem;
+}
+
+.lunch-box-left {
+    position: absolute;
+    left: 4rem;
+}
+
+.menu__price {
+    position: relative;
+    width: 13rem;
+    height: 13rem;
+    top: 4rem;
+}
+
+.menu__price p {
+    color: #fff;
+    font-size: 4.6rem;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 30px;
+    bottom: 40px;
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu__price img {
+    position: absolute;
+    z-index: -1;
+}
+
+@media (max-width: 1060px) {
+    .lunch-box-content {
+        display: block;
+    }
+
+    .lunch-box-left {
+        position: relative;
+        left: 0;
+    }
+
+    .lunch-box-weekday ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .lun-box-result {
+        position: relative;
+        left: 4%;
+    }
+
+    .lunch-box-img img {
+        right: -16rem;
+        top: 3rem;
+    }
+
+    .menu__price {
+        position: absolute;
+        right: 0;
+        top: 6rem;
+    }
 }
 
 /* Shop cart */
