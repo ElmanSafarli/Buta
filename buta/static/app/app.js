@@ -512,4 +512,106 @@ function updateImage(imageId, imagePath) {
 }
 
 showLunchBox(1)
-updateImage('imgLunch', '{% static "assets/qarnir4.png" %}')
+updateImage('imgLunch', '/static/assets/soup1.png')
+
+$(".addToCartBtn").on("click", function () {
+    let cart = $("#showCartBtn");
+    let imgtodrag = $(this)
+        .parent(".menu-btn")
+        .parent(".menu-item-bottom")
+        .parent(".menu-item")
+        .find("img")
+        .eq(0);
+
+    if (imgtodrag) {
+        // дублируем картинку
+        var imgclone = imgtodrag
+            .clone()
+            .offset({
+                top: imgtodrag.offset().top,
+                left: imgtodrag.offset().left
+            })
+            .css({
+                opacity: "0.8",
+                position: "absolute",
+                height: "150px",
+                width: "150px",
+                objectFit: "cover",
+                "z-index": "100"
+            })
+            .appendTo($("body"))
+            .animate(
+                {
+                    top: cart.offset().top + 0,
+                    left: cart.offset().left + 0,
+                    width: 55,
+                    height: 55
+                },
+                1000,
+                "easeInOutExpo"
+            );
+
+
+        imgclone.animate(
+            {
+                width: 0,
+                height: 0
+            },
+            function () {
+                $(this).detach();
+            }
+        );
+    } else {
+        console.error('Image not found.');
+    }
+});
+
+$('.dropdown > .caption').on('click', function () {
+    $(this).parent().toggleClass('open');
+});
+
+$('.dropdown > .list > .item').on('click', function () {
+    var selectedLanguage = $(this).data("item");
+    var currentPath = window.location.pathname;
+
+    // Update the caption with the selected language
+    $('.dropdown > .caption > img').attr('src', $(this).find('img').attr('src'));
+    $('.dropdown > .caption > span').text($(this).find('span').text());
+
+    // Log the selected language to the console for debugging
+    console.log('Selected language:', selectedLanguage);
+
+    // Update the language selection in the form
+    $('[name="language"]').val(selectedLanguage);
+
+    // Save the selected language to local storage
+    localStorage.setItem('selectedLanguage', selectedLanguage);
+
+    // Perform the form submission to set the language cookie
+    $('form.language-form').submit();
+
+    // Redirect immediately
+    if (selectedLanguage) {
+        var newPath = currentPath.replace(/^\/\w+\//, '/' + selectedLanguage + '/');
+        window.location.href = newPath;
+    }
+});
+
+$(document).on('keyup', function (evt) {
+    if ((evt.keyCode || evt.which) === 27) {
+        $('.dropdown').removeClass('open');
+    }
+});
+
+$(document).on('click', function (evt) {
+    if ($(evt.target).closest(".dropdown > .caption").length === 0) {
+        $('.dropdown').removeClass('open');
+    }
+});
+
+var storedLanguage = localStorage.getItem('selectedLanguage');
+if (storedLanguage) {
+    // Update the caption with the stored language
+    $('.dropdown > .caption > img').attr('src', $('.dropdown > .list > .item[data-item="' + storedLanguage + '"]').find('img').attr('src'));
+    $('.dropdown > .caption > span').text($('.dropdown > .list > .item[data-item="' + storedLanguage + '"]').find('span').text());
+}

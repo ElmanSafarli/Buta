@@ -1,16 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;0,600;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-* {
-    font-family: 'Poppins', sans-serif;
-}
 
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
-    max-width: 1700px;
 }
+
+/*  */
+.currency-switcher {
+    position: relative;
+    margin: 50px auto;
+}
+
+div.dropdown {
+    position: relative;
+    width: 100px;
+}
+
+div.dropdown:after {
+    content: "";
+    position: absolute;
+    margin: 0;
+    width: 16px;
+    height: 17px;
+    background-image: url(http://botkits.ru/img/icons/down.svg);
+    top: 15px;
+    right: 10px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+div.dropdown.open:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+div.dropdown>div.caption {
+    background: #F8F9FB;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 12.5px 15px 12.5px 60px;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+div.dropdown>div.list {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+    box-shadow: 0px 12px 24px rgba(21, 18, 51, 0.13);
+    opacity: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+    transition: all 0.15s cubic-bezier(0.25, 0, 0.25, 1.75), opacity 0.1s linear;
+    -webkit-transform: scale(0.85);
+    transform: scale(0.85);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    top: 52px;
+    z-index: -1;
+    visibility: hidden;
+    padding: 10px 0;
+}
+
+div.dropdown.open>div.list {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+}
+
+div.dropdown>div.list>div.item {
+    padding: 10.5px 15px 10.5px 62px;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+}
+
+div.dropdown>div.list>div.item.selected {
+    background: rgba(36, 60, 187, 0.2);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+}
+
+div.dropdown>div.list>div.item:hover {
+    background: #F8F9FB;
+}
+
+div.dropdown>div.caption img,
+div.dropdown>div.list>div.item img,
+div.dropdown>div.caption svg,
+div.dropdown>div.list>div.item svg {
+    position: absolute;
+    margin-top: 2.5px;
+    left: 15px;
+    width: 30px;
+}
+
+div.dropdown>div.list>div.item span,
+div.dropdown>div.caption span {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    color: #243CBB;
+}
+
+div.dropdown>div.list>div.item span {
+    right: 20px;
+}
+
 
 .width-full {
     width: 40% !important;
@@ -596,6 +711,13 @@ body {
 }
 
 /* Menu Page */
+.menuPage {
+    margin: 0 auto;
+    /* Center the container */
+    max-width: 1800px;
+    width: 100%;
+}
+
 .menuPage-section {
     color: #DC3545;
     text-align: center;
@@ -1076,6 +1198,7 @@ body {
     .lun-box-result {
         position: relative;
         left: 4%;
+        width: 90%;
     }
 
     .lunch-box-img img {
@@ -1087,6 +1210,42 @@ body {
         position: absolute;
         right: 0;
         top: 6rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .lunch-box-weekday ul {
+        justify-content: start;
+    }
+
+    .lunch-box-weekday ul li {
+        margin: 6px;
+    }
+
+    .lunch-box-weekday ul li button {
+        padding: 0 16px;
+        font-size: 14px;
+    }
+
+    .lunch-box-img {
+        display: none;
+    }
+
+    .menu__price {
+        position: absolute;
+        right: 4rem;
+        top: 8rem;
+        width: 124px;
+        height: 124px
+    }
+
+    .menu__price p {
+        font-size: 3rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: -3px;
+        bottom: 0px;
     }
 }
 
