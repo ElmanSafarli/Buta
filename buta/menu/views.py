@@ -12,8 +12,16 @@ class HomePage(TemplateView):
 
     def get(self, request, *args, **kwargs):
         reviews = Review.objects.all()
+        menu_items_with_images = MenuItem.objects.exclude(image__isnull=True)
         form = ReviewForm()
-        return render(request, self.template_name, {'reviews': reviews, 'form': form})
+
+        context = {
+            'reviews': reviews,
+            'form': form,
+            'menu_items_with_images': menu_items_with_images,
+        }
+
+        return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
         form = ReviewForm(request.POST)
@@ -77,9 +85,6 @@ def send_to_telegram_view(request):
             # Send message to Telegram
             send_to_telegram(message)
 
-            # Clear the shopping cart after placing the order
-            # You might need to adapt this depending on how you manage your cart
-            # This is just an example assuming you store the cart in the session
             request.session['cart'] = {}
 
             return JsonResponse({'status': 'success'})

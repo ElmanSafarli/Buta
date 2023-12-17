@@ -1,10 +1,155 @@
+function initializeLanguageSwitcher() {
+    var storedLanguage = localStorage.getItem('selectedLanguage');
+    if (storedLanguage) {
+        // Set the language in the form
+        $('[name="language"]').val(storedLanguage);
+
+        // Update the caption with the selected language
+        $('.dropdown > .caption > img').attr('src', $('.dropdown > .list > .item[data-item="' + storedLanguage + '"]').find('img').attr('src'));
+        $('.dropdown > .caption > span').text($('.dropdown > .list > .item[data-item="' + storedLanguage + '"]').find('span').text());
+
+        // Redirect immediately
+        var currentPath = window.location.pathname;
+        var newPath;
+
+        if (currentPath === '/') {
+            newPath = '/' + storedLanguage + '/';
+        } else {
+            newPath = currentPath.replace(/^\/\w+\//, '/' + storedLanguage + '/');
+        }
+
+        // Check if the current URL already matches the selected language
+        if (currentPath !== newPath) {
+            window.location.href = newPath;
+        }
+    }
+}
+
+$(document).ready(function () {
+
+    // Initial page load
+    $('#loader').fadeOut(500);
+
+    // Show the loader before leaving the page
+    $(document).on('click', 'a', function (e) {
+        $('#loader').fadeIn(500);
+    });
+
+    initializeLanguageSwitcher();
+
+    // Attach event listeners when the document is ready
+    $('.dropdown > .caption').on('click', function (e) {
+        e.stopPropagation(); // Prevent event from reaching document click listener
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.dropdown > .list > .item').on('click', function (e) {
+        e.stopPropagation(); // Prevent event from reaching document click listener
+        var selectedLanguage = $(this).data("item");
+        var currentPath = window.location.pathname;
+
+        // Update the caption with the selected language
+        $('.dropdown > .caption > img').attr('src', $(this).find('img').attr('src'));
+        $('.dropdown > .caption > span').text($(this).find('span').text());
+
+        // Log the selected language to the console for debugging
+        console.log('Selected language:', selectedLanguage);
+
+        // Update the language selection in the form
+        $('[name="language"]').val(selectedLanguage);
+
+        // Save the selected language to local storage
+        localStorage.setItem('selectedLanguage', selectedLanguage);
+
+        // Perform the form submission to set the language cookie
+        $('form.language-form').submit();
+
+        // Redirect immediately
+        if (selectedLanguage) {
+            var newPath;
+            if (currentPath === '/') {
+                newPath = '/' + selectedLanguage + '/';
+            } else {
+                newPath = currentPath.replace(/^\/\w+\//, '/' + selectedLanguage + '/');
+            }
+            window.location.href = newPath;
+        }
+    });
+
+    $(document).on('click', function () {
+        $('.dropdown').removeClass('open');
+    });
+
+    $('.dropdown').on('click', function (e) {
+        e.stopPropagation();
+    });
+
+    $(".addToCartBtn").on("click", function () {
+        let cart = $("#showCartBtn");
+        let imgtodrag = $(this)
+            .closest(".menu-item")
+            .find("img")
+            .eq(0);
+
+        if (imgtodrag.length) {
+            // Check if imgtodrag is a valid jQuery object
+            var imgclone = imgtodrag
+                .clone()
+                .offset({
+                    top: imgtodrag.offset().top,
+                    left: imgtodrag.offset().left
+                })
+                .css({
+                    opacity: "0.8",
+                    position: "absolute",
+                    height: "150px",
+                    width: "150px",
+                    objectFit: "cover",
+                    "z-index": "100"
+                })
+                .appendTo($("body"))
+                .animate(
+                    {
+                        top: cart.offset().top + -40,
+                        left: cart.offset().left + 0,
+                        width: 55,
+                        height: 55
+                    },
+                    1000,
+                    "easeInOutExpo"
+                );
+
+            imgclone.animate(
+                {
+                    width: 0,
+                    height: 0
+                },
+                function () {
+                    $(this).detach();
+                }
+            );
+        } else {
+            console.error('Image not found.');
+        }
+    });
+
+    $(".option").click(function () {
+        $(".option").removeClass("active");
+        $(this).addClass("active");
+
+    });
+});
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     var menuItems = [];
+
     // document.getElementById('cartSidebar').classList.remove('width-full');
     menuItems = Array.from(document.querySelectorAll('.menu-item')).map(function (menuItem) {
         return {
             id: menuItem.getAttribute('data-menu-item-id'),
-            name: menuItem.querySelector('.menu-item-title a').textContent,
+            name: menuItem.querySelector('.menu-item-title').textContent,
             price: parseFloat(menuItem.querySelector('.menu-price').textContent),
             subcategory: menuItem.getAttribute('data-subcategory'),
         };
@@ -19,21 +164,48 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.category-btn').forEach(function (button) {
         button.addEventListener('click', function () {
             var categoryName = button.getAttribute('data-category');
+
+            // Show all products in the selected category
+            showAllProductsInCategory(categoryName);
+
             showSubcategories(categoryName);
 
-            var menuItems = document.querySelector('.menu-items');
             // Check if the selected category has ID 2
             if (categoryName === '2') {
                 // Show the block with class "business-lunch"
                 document.querySelector('.business-lunch').style.display = 'block';
-                menuItems.style.display = 'none';
             } else {
                 // Hide the block with class "business-lunch" for other categories
                 document.querySelector('.business-lunch').style.display = 'none';
-                menuItems.style.display = 'flex';
             }
         });
     });
+
+    // Function to show all products in the selected category
+    function showAllProductsInCategory(categoryName) { //2 aldi categoriya
+        // Show only the menu items that belong to the clicked category
+        document.querySelectorAll('.menu-item').forEach(function (menuItem) {
+            var menuItemCategory = menuItem.getAttribute('data-main-category');
+            if (menuItemCategory === categoryName) {
+                menuItem.style.display = 'block';
+            } else {
+                menuItem.style.display = 'none';
+            }
+        });
+    }
+
+    // Function to show subcategories based on the selected category
+    function showSubcategories(category) {
+        // Show only the subcategories that belong to the selected category
+        document.querySelectorAll('.subcategory-item').forEach(function (subcategory) {
+            var subcategoryCategory = subcategory.getAttribute('data-category');
+            if (subcategoryCategory === category) {
+                subcategory.style.display = 'flex';
+            } else {
+                subcategory.style.display = 'none';
+            }
+        });
+    }
 
     function updateCartItemQuantity(itemId, quantity) {
         var cart = JSON.parse(localStorage.getItem('cart')) || {};
@@ -86,8 +258,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Show only the menu items that belong to the clicked subcategory
             document.querySelectorAll('.menu-item').forEach(function (menuItem) {
-                var menuItemSubcategory = menuItem.getAttribute('data-category');
-                if (menuItemSubcategory === clickedSubcategory) {
+                var menuItemCategory = menuItem.getAttribute('data-category'); // Use 'data-category' instead of 'data-subcategory'
+                if (menuItemCategory === clickedSubcategory) {
                     menuItem.style.display = 'block';
                 } else {
                     menuItem.style.display = 'none';
@@ -95,20 +267,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-
-    function showSubcategories(category) {
-        // Show only the subcategories that belong to the selected category
-        document.querySelectorAll('.subcategory-item').forEach(function (subcategory) {
-            var subcategoryCategory = subcategory.getAttribute('data-category');
-            if (subcategoryCategory === category) {
-                subcategory.style.display = 'flex';
-            } else {
-                subcategory.style.display = 'none';
-            }
-        });
-    }
-
-
 
     document.querySelectorAll('.incrementBtn, .decrementBtn').forEach(function (button) {
         button.addEventListener('click', function () {
@@ -137,12 +295,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.addToCartBtn').forEach(function (button) {
         button.addEventListener('click', function () {
             var menuItemId = button.getAttribute('data-menu-item');
-            var countElement = document.getElementById('count_' + menuItemId);
-            if (!countElement) {
-                console.error('Count element not found.');
-                return;
-            }
-            var itemCount = parseInt(countElement.textContent) || 1;
+            // var countElement = document.getElementById('count_' + menuItemId);
+            // if (!countElement) {
+            //     console.error('Count element not found.');
+            //     return;
+            // }
+            var itemCount = 1;
             addToCart(menuItemId, itemCount);
             updateCartDisplay();
             updateCartItemQuantity(menuItemId, itemCount);
@@ -201,9 +359,32 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('contactForm').style.display = 'none';
     });
 
-    document.getElementById('confirmContactBtn').addEventListener('click', function () {
-        document.getElementById('contactForm').style.display = 'none';
+    // Telegram send button animation
+    let duration = 1600;
 
+    function success(button) {
+        // Success function
+        $(button).addClass('success');
+
+        // Add your logic to send data here
+        if (isDataValid()) {
+            sendTelegramData();
+        } else {
+            alert('Please enter valid data or select a product.');
+        }
+    }
+
+    function isDataValid() {
+        var contactName = document.getElementById('contactName').value;
+        var contactSurname = document.getElementById('contactSurname').value;
+        var contactNumber = document.getElementById('contactNumber').value;
+        var contactAddress = document.getElementById('contactAddress').value;
+
+        // Add additional checks for other required fields if needed
+        return contactName.trim() !== '' && contactNumber.trim() !== '';
+    }
+
+    function sendTelegramData() {
         var contactName = document.getElementById('contactName').value;
         var contactSurname = document.getElementById('contactSurname').value;
         var contactNumber = document.getElementById('contactNumber').value;
@@ -222,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Cart contents:', cart);
 
             // Send both contact details and cart data to the server
-            fetch('/send-to-telegram/', {
+            fetch('/en/send-to-telegram/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -236,14 +417,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(response => response.json())
                 .then(data => {
                     if (data.status === 'success') {
-                        alert('Order sent to Telegram successfully!');
+                        alert('Your order is accepted! Our manager will contact you soon :)');
                     } else {
-                        alert('Failed to send order to Telegram.');
+                        alert('The order has not been sent. Contact us by phone (+994)99-876-43-43');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('An error occurred while sending the order to Telegram.');
+                    alert('There was an error sending your order :(');
                 });
 
             // Clear the cart
@@ -252,7 +433,30 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             console.error('CSRF token not found.');
         }
+    }
+
+    $('.button-hold').each(function () {
+        $(this).css('--duration', duration + 'ms');
+
+        ['mousedown', 'touchstart', 'keypress'].forEach(function (e) {
+            $(this).on(e, function (ev) {
+                if (e != 'keypress' || (e == 'keypress' && ev.which == 32 && !$(this).hasClass('process'))) {
+                    $(this).addClass('process');
+                    this.timeout = setTimeout(success, duration, this);
+                }
+            }.bind(this));
+        }.bind(this));
+
+        ['mouseup', 'mouseout', 'touchend', 'keyup'].forEach(function (e) {
+            $(this).on(e, function (ev) {
+                if (e != 'keyup' || (e == 'keyup' && ev.which == 32)) {
+                    $(this).removeClass('process');
+                    clearTimeout(this.timeout);
+                }
+            }.bind(this));
+        }.bind(this));
     });
+
 
     function getCookie(name) {
         var value = "; " + document.cookie;
@@ -269,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var itemId in cart) {
             var menuItem = document.querySelector('.menu-item[data-menu-item-id="' + itemId + '"]');
             if (menuItem) {
-                var itemName = menuItem.querySelector('.menu-item-title a').textContent;
+                var itemName = menuItem.querySelector('.menu-item-title').textContent;
                 var itemPrice = parseFloat(menuItem.querySelector('.menu-price').textContent);
                 var itemTotalPrice = itemPrice * cart[itemId];
                 var itemQuantity = cart[itemId];
@@ -325,14 +529,6 @@ document.addEventListener('DOMContentLoaded', function () {
         totalPriceElement.textContent = 'Total Price: ' + totalPrice + ' ₼';
     }
 
-    // document.getElementById('showCartBtn').addEventListener('click', function () {
-    //     document.getElementById('cartSidebar').style.width = '70%';
-    // });
-
-    // document.getElementById('closeCartBtn').addEventListener('click', function () {
-    //     document.getElementById('cartSidebar').style.width = '0';
-    // });
-
     document.getElementById('showCartBtn').addEventListener('click', function () {
         document.getElementById('cartSidebar').classList.add('width-full');
     });
@@ -384,12 +580,12 @@ document.addEventListener('DOMContentLoaded', function () {
         breakpoints: {
             1100: {
                 perPage: 1,
-                padding: { left: '25%', right: '25%' } // Adjust the padding values as needed
+                padding: { left: '25%', right: '25%' }
             },
             800: {
                 perPage: 1,
-                padding: { left: '2%', right: '2%' }, // Adjust the padding values as needed
-                arrows: false // You can customize other options for smaller screens
+                padding: { left: '2%', right: '2%' },
+                arrows: false
             }
         },
         arrows: true
@@ -398,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function () {
         perPage: 1,
         pagination: false,
         focus: 0,
-        fixedWidth: 150,
+        fixedWidth: 130,
         isNavigation: false,
         gap: 10,
     }).mount();
@@ -406,7 +602,7 @@ document.addEventListener('DOMContentLoaded', function () {
         perPage: 1,
         pagination: false,
         focus: 0,
-        fixedWidth: 150,
+        fixedWidth: 130,
         isNavigation: false,
         gap: 10,
     }).mount();
@@ -414,7 +610,7 @@ document.addEventListener('DOMContentLoaded', function () {
         perPage: 1,
         pagination: false,
         focus: 0,
-        fixedWidth: 150,
+        fixedWidth: 130,
         isNavigation: false,
         gap: 10,
     }).mount();
@@ -422,7 +618,7 @@ document.addEventListener('DOMContentLoaded', function () {
         perPage: 1,
         pagination: false,
         focus: 0,
-        fixedWidth: 150,
+        fixedWidth: 130,
         isNavigation: false,
         gap: 10,
     }).mount();
@@ -514,104 +710,5 @@ function updateImage(imageId, imagePath) {
 showLunchBox(1)
 updateImage('imgLunch', '/static/assets/soup1.png')
 
-$(".addToCartBtn").on("click", function () {
-    let cart = $("#showCartBtn");
-    let imgtodrag = $(this)
-        .parent(".menu-btn")
-        .parent(".menu-item-bottom")
-        .parent(".menu-item")
-        .find("img")
-        .eq(0);
-
-    if (imgtodrag) {
-        // дублируем картинку
-        var imgclone = imgtodrag
-            .clone()
-            .offset({
-                top: imgtodrag.offset().top,
-                left: imgtodrag.offset().left
-            })
-            .css({
-                opacity: "0.8",
-                position: "absolute",
-                height: "150px",
-                width: "150px",
-                objectFit: "cover",
-                "z-index": "100"
-            })
-            .appendTo($("body"))
-            .animate(
-                {
-                    top: cart.offset().top + 0,
-                    left: cart.offset().left + 0,
-                    width: 55,
-                    height: 55
-                },
-                1000,
-                "easeInOutExpo"
-            );
 
 
-        imgclone.animate(
-            {
-                width: 0,
-                height: 0
-            },
-            function () {
-                $(this).detach();
-            }
-        );
-    } else {
-        console.error('Image not found.');
-    }
-});
-
-$('.dropdown > .caption').on('click', function () {
-    $(this).parent().toggleClass('open');
-});
-
-$('.dropdown > .list > .item').on('click', function () {
-    var selectedLanguage = $(this).data("item");
-    var currentPath = window.location.pathname;
-
-    // Update the caption with the selected language
-    $('.dropdown > .caption > img').attr('src', $(this).find('img').attr('src'));
-    $('.dropdown > .caption > span').text($(this).find('span').text());
-
-    // Log the selected language to the console for debugging
-    console.log('Selected language:', selectedLanguage);
-
-    // Update the language selection in the form
-    $('[name="language"]').val(selectedLanguage);
-
-    // Save the selected language to local storage
-    localStorage.setItem('selectedLanguage', selectedLanguage);
-
-    // Perform the form submission to set the language cookie
-    $('form.language-form').submit();
-
-    // Redirect immediately
-    if (selectedLanguage) {
-        var newPath = currentPath.replace(/^\/\w+\//, '/' + selectedLanguage + '/');
-        window.location.href = newPath;
-    }
-});
-
-$(document).on('keyup', function (evt) {
-    if ((evt.keyCode || evt.which) === 27) {
-        $('.dropdown').removeClass('open');
-    }
-});
-
-$(document).on('click', function (evt) {
-    if ($(evt.target).closest(".dropdown > .caption").length === 0) {
-        $('.dropdown').removeClass('open');
-    }
-});
-
-var storedLanguage = localStorage.getItem('selectedLanguage');
-if (storedLanguage) {
-    // Update the caption with the stored language
-    $('.dropdown > .caption > img').attr('src', $('.dropdown > .list > .item[data-item="' + storedLanguage + '"]').find('img').attr('src'));
-    $('.dropdown > .caption > span').text($('.dropdown > .list > .item[data-item="' + storedLanguage + '"]').find('span').text());
-}

@@ -17,7 +17,7 @@ class Subcategory(models.Model):
 class MenuItem(models.Model):
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     image = models.ImageField(upload_to='menu_images/', null=True, blank=True)
 

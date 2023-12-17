@@ -122,6 +122,71 @@
         </div>
     </section>
 
+    <section id="galleryOption">
+        <div class="gallery-options">
+           <div class="option active" style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
+              <div class="shadow"></div>
+              <div class="label">
+                 <div class="icon">
+                    <i class="fas fa-walking"></i>
+                 </div>
+                 <div class="info">
+                    <div class="main">Title</div>
+                    <div class="sub">Short text about restaurant</div>
+                 </div>
+              </div>
+           </div>
+           <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
+              <div class="shadow"></div>
+              <div class="label">
+                 <div class="icon">
+                    <i class="fas fa-snowflake"></i>
+                 </div>
+                 <div class="info">
+                    <div class="main">Title</div>
+                    <div class="sub">Short text about restaurant</div>
+                 </div>
+              </div>
+           </div>
+           <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+              <div class="shadow"></div>
+              <div class="label">
+                 <div class="icon">
+                    <i class="fas fa-tree"></i>
+                 </div>
+                 <div class="info">
+                    <div class="main">Title</div>
+                    <div class="sub">Short text about restaurant</div>
+                 </div>
+              </div>
+           </div>
+           <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+              <div class="shadow"></div>
+              <div class="label">
+                 <div class="icon">
+                    <i class="fas fa-tint"></i>
+                 </div>
+                 <div class="info">
+                    <div class="main">Title</div>
+                    <div class="sub">Short text about restaurant</div>
+                 </div>
+              </div>
+           </div>
+           <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
+              <div class="shadow"></div>
+              <div class="label">
+                 <div class="icon">
+                    <i class="fas fa-sun"></i>
+                 </div>
+                 <div class="info">
+                    <div class="main">Title</div>
+                    <div class="sub">Short text about restaurant</div>
+                 </div>
+              </div>
+           </div>
+        </div>
+    </section>
+
     <section>
         <div class="menu">
             <div class="menu-content">
@@ -145,37 +210,20 @@
                     <div id="menuSlide1" class="splide active">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-
+                                {% for menu_item in menu_items_with_images %}
+                                    {% if menu_item.subcategory.category_id == 3 %}
+                                        <li class="splide__slide">
+                                            <div class="menu-box">
+                                                {% if menu_item.image %}
+                                                    <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                                                {% else %}
+                                                    <img src="{% static 'assets/logo.png' %}" alt="logo">
+                                                {% endif %}
+                                                <a href="/menu">{% trans 'Ətraflı oxu' %}</a>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -183,20 +231,20 @@
                     <div id="menuSlide2" class="splide">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c7b32eb32-Vanilla-flavored-tea.png" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="{% static 'assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png' %}" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-
-                                <!-- Add more slides as needed -->
+                                {% for menu_item in menu_items_with_images %}
+                                    {% if menu_item.subcategory_id == 7 %}
+                                        <li class="splide__slide">
+                                            <div class="menu-box">
+                                                {% if menu_item.image %}
+                                                    <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                                                {% else %}
+                                                    <img src="{% static 'assets/logo.png' %}" alt="logo">
+                                                {% endif %}
+                                                <a href="/menu">{% trans 'Ətraflı oxu' %}</a>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -204,55 +252,20 @@
                     <div id="menuSlide3" class="splide">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c7da238f8-Tea with almond flavor.png" alt="">
-                                        <a href="">{% trans 'Ətraflı oxu' %}</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <!-- Add more slides as needed -->
+                                {% for menu_item in menu_items_with_images %}
+                                    {% if menu_item.subcategory_id == 6 %}
+                                        <li class="splide__slide">
+                                            <div class="menu-box">
+                                                {% if menu_item.image %}
+                                                    <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                                                {% else %}
+                                                    <img src="{% static 'assets/logo.png' %}" alt="logo">
+                                                {% endif %}
+                                                <a href="/menu">{% trans 'Ətraflı oxu' %}</a>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -260,55 +273,20 @@
                     <div id="menuSlide4" class="splide">
                         <div class="splide__track">
                             <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c8e5c2443-Pannacotta-Tea.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <li class="splide__slide">
-                                    <div class="menu-box">
-                                        <img src="./assets/64f1c75dd2b2f-Tea-with-coconut-flavor.png" alt="">
-                                        <a href="">Ətraflı oxu</a>
-                                    </div>
-                                </li>
-                                <!-- Add more slides as needed -->
+                                {% for menu_item in menu_items_with_images %}
+                                    {% if menu_item.subcategory_id == 6 %}
+                                        <li class="splide__slide">
+                                            <div class="menu-box">
+                                                {% if menu_item.image %}
+                                                    <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                                                {% else %}
+                                                    <img src="{% static 'assets/logo.png' %}" alt="logo">
+                                                {% endif %}
+                                                <a href="/menu">{% trans 'Ətraflı oxu' %}</a>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -397,6 +375,7 @@
             <div class="review-form-item">
                 {{ form.text }}
             </div>
+
             <button type="submit">{% trans 'Göndər' %}</button>
         </form>
     </div>

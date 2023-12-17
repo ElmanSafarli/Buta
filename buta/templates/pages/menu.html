@@ -409,30 +409,33 @@
             </div>
         </div>
 
+
         <!-- Display menu items -->
         <div class="menu-items">
             {% for menu_item in menu_items %}
-                <div class="menu-item" data-menu-item-id="{{ menu_item.id }}" data-category="{{ menu_item.subcategory_id }}">
-                    <div class="menu-img">
-                        {% if menu_item.image %}
-                            <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
-                        {% else %}
-                             <img src="{% static 'assets/logo.png' %}" alt="logo">
-                        {% endif %}
-                    </div>
-                    <div class="menu-item-title"><a href="">{{ menu_item.name }}</a></div>
-                    <div class="menu-item-description">{{ menu_item.description }}</div>
-                    <div class="menu-item-bottom">
-                        <div class="menu-price">{{ menu_item.price }} ₼</div>
-                        <div class="menu-count">
-                            <button class="decrementBtn" data-menu-item-id="{{ menu_item.id }}"><img src="{% static 'assets/minus 1.png' %}" alt=""></button>
-                            <p class="count" id="count_{{ menu_item.id }}">1</p>
-                            <button class="incrementBtn" data-menu-item-id="{{ menu_item.id }}"><img src="{% static 'assets/plus 1.png' %}" alt=""></button>
+            <div class="menu-item" data-menu-item-id="{{ menu_item.id }}" data-category="{{ menu_item.subcategory_id }}" data-main-category="{{ menu_item.subcategory.category_id }}">
+                <div class="card">
+                        <div class="menu-img">
+                            {% if menu_item.image %}
+                                <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                            {% else %}
+                                 <img src="{% static 'assets/logo.png' %}" alt="logo">
+                            {% endif %}
                         </div>
-                        <div class="menu-btn">
-                            <button class="addToCartBtn" data-menu-item="{{ menu_item.id }}"><img src="{% static 'assets/shopping-cart.png' %}" alt=""></button>
+                        <div class="content">
+                          <div class="menu-item-title">{{ menu_item.name }}</div>
+                          <div class="bg-title">BUTA</div>
+                          <div class="feature">
+                            <div>{{ menu_item.description }}</div>
+                          </div>
+                          <div class="feature">
+                            <div class="menu-price">{{ menu_item.price }} ₼</div>
+                          </div>
+                            <div class="menu-btn">
+                          <button class="addToCartBtn" data-menu-item="{{ menu_item.id }}">buy now</button>
+                                 </div>
                         </div>
-                    </div>
+                      </div>
                 </div>
             {% endfor %}
         </div>
@@ -485,9 +488,23 @@
                               <input type="text" name="contactAddress" id="contactAddress" placeholder="Təbriz küçəsi...." required class="contact-information-order-form-input" />
                           </div>
                           <div class="mb-6">
-                          <button id="confirmContactBtn" type="button" class="contact-information-order-submit-btn">
-                            Göndər
-                          </button>
+<!--                          <button id="confirmContactBtn" type="button" class="contact-information-order-submit-btn">-->
+<!--                            Göndər-->
+<!--                          </button>-->
+                          <button class="button-hold" id="confirmContactBtn" type="button">
+                                <div>
+                                    <svg class="icon" viewBox="0 0 16 16">
+                                        <polygon points="1.3,6.7 2.7,8.1 7,3.8 7,16 9,16 9,3.8 13.3,8.1 14.7,6.7 8,0"></polygon>
+                                    </svg>
+                                    <svg class="progress" viewBox="0 0 32 32">
+                                        <circle r="8" cx="16" cy="16" />
+                                    </svg>
+                                    <svg class="tick" viewBox="0 0 24 24">
+                                        <polyline points="18,7 11,16 6,12" />
+                                    </svg>
+                                </div>
+                                Send
+                            </button>
                         </div>
                       </form>
                     </div>
