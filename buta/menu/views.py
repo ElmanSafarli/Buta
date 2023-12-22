@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .models import Category, Subcategory, MenuItem, Review
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 import requests
 import json
 from .forms import ReviewForm
-from django.views import View
+
 class HomePage(TemplateView):
     template_name = 'pages/home.html'
 
@@ -34,6 +34,34 @@ class HomePage(TemplateView):
             )
             return redirect('home')  # Redirect to the same page after submission
         return render(request, self.template_name, {'form': form})
+
+class ContactPage(TemplateView):
+    template_name = "pages/contact.html"
+
+
+
+@csrf_exempt
+def send_contact_form_to_telegram(request):
+    if request.method == 'POST':
+        try:
+
+            received_data = json.loads(request.body)
+            contact_name = received_data.get('name')
+            contact_number = received_data.get('phone')
+            contact_text = received_data.get('text')
+
+            # Prepare the message for Telegram
+            message = f"New Contact Form Submission:\n\nName: {contact_name}\nNumber: {contact_number}\nText: {contact_text}"
+
+            # Send message to Telegram
+            send_to_telegram(message)
+
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            print(f'Error processing the form submission: {str(e)}')  # Debug print
+            return JsonResponse({'status': 'error', 'message': 'Failed to process the form submission.'})
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
 
 
 class MenuPage(TemplateView):

@@ -25,6 +25,73 @@ function initializeLanguageSwitcher() {
     }
 }
 
+function sendContactFormData(event) {
+    event.preventDefault();  // Prevent the form from submitting in the traditional way
+
+    var form = document.querySelector('.contactPageForm');
+    var contactName = document.getElementById('contactPageName').value;
+    var contactNumber = document.getElementById('contactPageNumber').value;
+    var contactText = document.getElementById('contactPageText').value;
+
+    var contactDetails = {
+        name: contactName,
+        phone: contactNumber,
+        text: contactText,
+    };
+
+    console.log(JSON.stringify(contactDetails));
+
+    var csrfToken = getCookie('csrftoken');
+    console.log(csrfToken);
+
+    if (csrfToken) {
+        fetch('send-contact-form-to-telegram/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken,
+            },
+            body: JSON.stringify(contactDetails),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Your message has been sent! We will get back to you soon.');
+                } else {
+                    console.log(data.message);
+                    alert('Failed to send your message. Please try again or contact us by phone.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again or contact us by phone.');
+            });
+        // Clear the form fields
+        document.getElementById('contactPageName').value = '';
+        document.getElementById('contactPageNumber').value = '';
+        document.getElementById('contactPageText').value = '';
+    } else {
+        console.error('CSRF token not found.');
+    }
+}
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+
 $(document).ready(function () {
 
     // Initial page load
@@ -464,6 +531,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (parts.length === 2) return parts.pop().split(";").shift();
     }
 
+
     function updateCartDisplay() {
         var cart = JSON.parse(localStorage.getItem('cart')) || {};
         var cartItemsList = document.getElementById('cart-items');
@@ -536,7 +604,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('closeCartBtn').addEventListener('click', function () {
         document.getElementById('cartSidebar').classList.remove('width-full');
     });
-
 
     updateCartDisplay();
 });
@@ -709,6 +776,3 @@ function updateImage(imageId, imagePath) {
 
 showLunchBox(1)
 updateImage('imgLunch', '/static/assets/soup1.png')
-
-
-

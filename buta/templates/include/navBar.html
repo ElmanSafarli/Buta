@@ -5,32 +5,20 @@
 
                 <nav>
                     <div class="nav-content">
-                        <div class="nav-logo">
-                            <img src="{% static 'assets/logo-bg.png' %}" alt="">
-                        </div>
+                        <a href="{% url 'home' %}">
+                            <div class="nav-logo">
+                                <img src="{% static 'assets/logo-bg.png' %}" alt="">
+                            </div>
+                        </a>
+
                         <div class="nav-item">
                             <ul>
-                                <li><a href="/">{% trans 'Əsas' %}</a></li>
-                                <li><a href="/menu">{% trans 'Menu' %}</a></li>
-                                <li><a href="">{% trans 'Əlaqə' %}</a></li>
-                                <li><a href="">{% trans 'Blog' %}</a></li>
-                                <li>
-<!--                                        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}-->
-<!--                                            <input name="next" type="hidden" value="{{ redirect_to }}">-->
-<!--                                            <select name="language">-->
-<!--                                                {% get_current_language as LANGUAGE_CODE %}-->
-<!--                                                {% get_available_languages as LANGUAGES %}-->
-<!--                                                {% get_language_info_list for LANGUAGES as languages %}-->
-<!--                                                {% for language in languages %}-->
-<!--                                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}-->
-<!--                                                            selected{% endif %}>-->
-<!--                                                        {{ language.name_local }} ({{ language.code }})-->
-<!--                                                    </option>-->
-<!--                                                {% endfor %}-->
-<!--                                            </select>-->
-<!--                                            <input type="submit" value="Go">-->
-<!--                                        </form>-->
-                                    <div class="language-switcher dropdown">
+                                <li><a href="{% url 'menu' %}">{% trans 'Menu' %}</a></li>
+                                <li><a href="{% url 'contact' %}">{% trans 'Əlaqə' %}</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="language-switcher dropdown">
                                       <div class="caption">
                                         <img src="{% static 'assets/en.png' %}" alt="En">
                                         <span>En</span>
@@ -50,9 +38,6 @@
                                         </div>
                                       </div>
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="sidebar" id="sidebar">
                             <div class="menu-group">
                                 <div id="menu"></div>
@@ -66,14 +51,9 @@
                                 </div>
                                 <ul>
                                     <li><a href="/">{% trans 'Əsas' %}</a></li>
-                                    <li><a href="/menu">{% trans 'Menu' %}</a></li>
-                                    <li><a href="">{% trans 'Əlaqə' %}</a></li>
-                                    <li><a href="">{% trans 'Haqqımızda' %}</a></li>
-                                    <li><a href="">{% trans 'Blog' %}</a></li>
+                                    <li><a href="{% url 'menu' %}">{% trans 'Menu' %}</a></li>
+                                    <li><a href="{% url 'contact' %}">{% trans 'Əlaqə' %}</a></li>
                                 </ul>
-                                <div class="sidebar-btn">
-                                    <button>Contact Us</button>
-                                </div>
                             </div>
                         </div>
                     </div>

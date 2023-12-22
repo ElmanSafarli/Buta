@@ -1,0 +1,62 @@
+<!-- pages/contact.html -->
+{% extends 'base.html' %}
+{% load static i18n %}
+{% load static %}
+
+{% block body %}
+    <div style="padding: 0 8%;">
+        {% include '../include/navBar.html' %}
+    </div>
+
+     <section>
+        <div class="contactPage">
+            <div class="contactPage-content">
+                <div class="contactPage-title">{% trans 'Get in touch' %}</div>
+                <div class="contactPage-info-group">
+                    <div class="contactPage-box">
+                        <div class="contactPage-box-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="contactPage-box-title">{% trans 'Address' %}</div>
+                        <div class="contactPage-box-value">{% trans 'Bakı şəhəri, Nəsimi rayonu, Rəşid Behbudov küç., ev 43' %}</div>
+                    </div>
+                    <div class="contactPage-box">
+                        <div class="contactPage-box-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="contactPage-box-title">{% trans 'Phone' %}</div>
+                        <div class="contactPage-box-value"><a href="tel:+994998764343">(+994)99-876-43-43</a></div>
+                    </div>
+                    <div class="contactPage-box">
+                        <div class="contactPage-box-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="contactPage-box-title">{% trans 'Email' %}</div>
+                        <div class="contactPage-box-value"><a href="mailto:info@butataste.az">info@butataste.az</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contactPage-send">
+                    <div class="contactPage-send-left">
+                        <img src="{% static 'assets/sapiens.svg' %}" alt="">
+                    </div>
+                    <div class="contactPage-send-right">
+                        <form class="contactPageForm" >
+
+                            <ul class="wrapper">
+                                <li style="--i:4;"><input class="input" type="text" placeholder="{% trans 'Name Surname' %}" required="" id="contactPageName" name="name"></li>
+                                <li style="--i:3;"><input class="input" type="number" placeholder="{% trans 'Phone number' %}" required="" name="phone" id="contactPageNumber"></li>
+                                <li style="--i:2;"><input class="input" type="text" placeholder="{% trans 'Text' %}" required="" name="text" id="contactPageText"></li>
+                                <button style="--i:1;" id="confirmation-btn" onclick="sendContactFormData(event)">{% trans 'Submit' %}</button>
+                            </ul>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include '../include/footer.html' %}
+
+{% endblock %}

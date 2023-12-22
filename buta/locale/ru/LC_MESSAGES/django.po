@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-10 15:26+0400\n"
+"POT-Creation-Date: 2023-12-22 03:48+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,30 +20,55 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\templates\include\footer.html:16 .\templates\include\navBar.html:13
-#: .\templates\include\navBar.html:49
+#: .\templates\include\footer.html:16 .\templates\include\navBar.html:53
 msgid "Əsas"
 msgstr "Основной"
 
-#: .\templates\include\footer.html:17 .\templates\include\navBar.html:14
-#: .\templates\include\navBar.html:50 .\templates\pages\home.html:131
+#: .\templates\include\footer.html:17 .\templates\include\navBar.html:16
+#: .\templates\include\navBar.html:54 .\templates\pages\home.html:196
 msgid "Menu"
 msgstr "Меню"
 
-#: .\templates\include\footer.html:18 .\templates\include\navBar.html:15
-#: .\templates\include\navBar.html:51
+#: .\templates\include\footer.html:18 .\templates\include\navBar.html:17
+#: .\templates\include\navBar.html:55
 msgid "Əlaqə"
-msgstr "контакты"
+msgstr "Контакты"
 
-#: .\templates\include\footer.html:19 .\templates\include\navBar.html:16
-#: .\templates\include\navBar.html:52
-msgid "Haqqımızda"
-msgstr "О нас"
+#: .\templates\pages\contact.html:14
+msgid "Get in touch"
+msgstr "Связаться с нами"
 
-#: .\templates\include\footer.html:20 .\templates\include\navBar.html:17
-#: .\templates\include\navBar.html:53 .\templates\pages\home.html:328
-msgid "Blog"
-msgstr "Блог"
+#: .\templates\pages\contact.html:20
+msgid "Address"
+msgstr "Адрес"
+
+#: .\templates\pages\contact.html:21
+msgid "Bakı şəhəri, Nəsimi rayonu, Rəşid Behbudov küç., ev 43"
+msgstr "Город Баку, Насиминовый район, улица Рашида Бейбутова, дом 43"
+
+#: .\templates\pages\contact.html:27
+msgid "Phone"
+msgstr "Номер"
+
+#: .\templates\pages\contact.html:34
+msgid "Email"
+msgstr "Почта"
+
+#: .\templates\pages\contact.html:47
+msgid "Name Surname"
+msgstr "Имя Фамилия"
+
+#: .\templates\pages\contact.html:48
+msgid "Phone number"
+msgstr "Номер"
+
+#: .\templates\pages\contact.html:49
+msgid "Text"
+msgstr "Текст"
+
+#: .\templates\pages\contact.html:50
+msgid "Submit"
+msgstr "Отправить"
 
 #: .\templates\pages\home.html:12
 msgid "Asılılıq"
@@ -55,9 +80,9 @@ msgstr "вкус"
 
 #: .\templates\pages\home.html:12
 msgid "dad"
-msgstr "."
+msgstr ""
 
-#: .\templates\pages\home.html:13 .\templates\pages\home.html:317
+#: .\templates\pages\home.html:13 .\templates\pages\home.html:295
 msgid ""
 "Böyük məmnuniyyətlə, biz hər bir ziyarətçini əhval-ruhiyyəni yüksəldən və "
 "sevindirənbubble tea sortunun müxtəlif variantlarını yaradırıq. Bizim bubble "
@@ -126,65 +151,142 @@ msgstr ""
 "Мы предлагаем уникальные вкусовые ощущения по специальным рецептам наших "
 "поваров."
 
-#: .\templates\pages\home.html:132
+#: .\templates\pages\home.html:134
+msgid "Culinary Excellence"
+msgstr "Кулинарное совершенство"
+
+#: .\templates\pages\home.html:135
+msgid "Gastronomic Delights Await"
+msgstr "Гастрономические удовольствия"
+
+#: .\templates\pages\home.html:146
+msgid "Fresh Local Ingredients"
+msgstr "Свежие местные ингредиенты"
+
+#: .\templates\pages\home.html:147
+msgid "Farm-to-Table Freshness"
+msgstr "Свежесть от фермы до стола"
+
+#: .\templates\pages\home.html:158
+msgid "Cozy Elegant Ambiance"
+msgstr "Уютная элегантная атмосфера"
+
+#: .\templates\pages\home.html:159
+msgid "A Refined Atmosphere for Every Occasion"
+msgstr "Изысканная атмосфера для любого случая"
+
+#: .\templates\pages\home.html:170
+msgid "Exceptional Warm Hospitality"
+msgstr "Исключительное теплое гостеприимство"
+
+#: .\templates\pages\home.html:171
+msgid "Where Every Guest Feels Like Family"
+msgstr "Где каждый гость чувствует себя как семья"
+
+#: .\templates\pages\home.html:182
+msgid "Innovative Signature Menu"
+msgstr "Инновационное фирменное меню"
+
+#: .\templates\pages\home.html:183
+msgid "Elevating Dining with Creative Flair"
+msgstr "Улучшите ужин с помощью творческого чутья"
+
+#: .\templates\pages\home.html:197
 msgid "Bizim unikal və yüksək keyfiyyətli dadlarımız."
 msgstr "Наши уникальные и высококачественные вкусы"
 
-#: .\templates\pages\home.html:135
+#: .\templates\pages\home.html:200
 msgid "İçkilər"
 msgstr "Напитки"
 
-#: .\templates\pages\home.html:136
+#: .\templates\pages\home.html:201
 msgid "Qarnirlər"
 msgstr "Напитки"
 
-#: .\templates\pages\home.html:137
+#: .\templates\pages\home.html:202
 msgid "Qəlyanaltılar"
 msgstr "Гарнир"
 
-#: .\templates\pages\home.html:138
+#: .\templates\pages\home.html:203
 msgid "Saladlar"
 msgstr "Салаты"
 
-#: .\templates\pages\home.html:151 .\templates\pages\home.html:157
-#: .\templates\pages\home.html:163 .\templates\pages\home.html:169
-#: .\templates\pages\home.html:175 .\templates\pages\home.html:189
-#: .\templates\pages\home.html:195 .\templates\pages\home.html:210
-#: .\templates\pages\home.html:334 .\templates\pages\home.html:339
-#: .\templates\pages\home.html:344
+#: .\templates\pages\home.html:222 .\templates\pages\home.html:243
+#: .\templates\pages\home.html:264 .\templates\pages\home.html:285
+#: .\templates\pages\home.html:312 .\templates\pages\home.html:317
+#: .\templates\pages\home.html:322
 msgid "Ətraflı oxu"
 msgstr "Читать далее"
 
-#: .\templates\pages\home.html:329
+#: .\templates\pages\home.html:306
+msgid "Blog"
+msgstr "Блог"
+
+#: .\templates\pages\home.html:307
 msgid "Zövq jurnalı"
 msgstr "Журнал «Удовольствие»"
 
-#: .\templates\pages\home.html:332 .\templates\pages\home.html:337
-#: .\templates\pages\home.html:342
+#: .\templates\pages\home.html:310 .\templates\pages\home.html:315
+#: .\templates\pages\home.html:320
 msgid "Noyabr 11, 2023"
 msgstr "11 ноября 2023 г."
 
-#: .\templates\pages\home.html:333 .\templates\pages\home.html:338
-#: .\templates\pages\home.html:343
+#: .\templates\pages\home.html:311 .\templates\pages\home.html:316
+#: .\templates\pages\home.html:321
 msgid "Buta taste cafenin açılış mərsimi keçirildi"
 msgstr "Состоялась церемония открытия кафе «Buta taste»"
 
-#: .\templates\pages\home.html:348
+#: .\templates\pages\home.html:326
 msgid "Daha çox"
 msgstr "Более"
 
-#: .\templates\pages\home.html:356
+#: .\templates\pages\home.html:334
 msgid "Rəylər"
 msgstr "Отзывы"
 
-#: .\templates\pages\home.html:375
+#: .\templates\pages\home.html:353
 msgid "Rəy yazın"
 msgstr "Напишити отзыв"
 
-#: .\templates\pages\home.html:384
+#: .\templates\pages\home.html:362
 msgid "Rəy bildirin"
 msgstr "Оставить отзыв"
 
-#: .\templates\pages\home.html:400
+#: .\templates\pages\home.html:379
 msgid "Göndər"
 msgstr "Отправить"
+
+#: .\templates\pages\menu.html:467
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+#: .\templates\pages\menu.html:471
+msgid "Fill up the form below to send us a message."
+msgstr "Заполните форму ниже, чтобы отправить нам сообщение."
+
+#: .\templates\pages\menu.html:475
+msgid "Ad"
+msgstr "Имя"
+
+#: .\templates\pages\menu.html:479
+msgid "Soyad"
+msgstr "Фамилия"
+
+#: .\templates\pages\menu.html:483
+msgid "Əlaqə nömrəsi"
+msgstr "Номер"
+
+#: .\templates\pages\menu.html:487
+msgid "Ünvan"
+msgstr "Адрес"
+
+#: .\templates\pages\menu.html:491
+msgid "Press and hold"
+msgstr "Нажмите и удерживайте"
+
+#: .\templates\pages\menu.html:503
+msgid "Send"
+msgstr "Отправить"
+
+#~ msgid "Haqqımızda"
+#~ msgstr "О нас"
