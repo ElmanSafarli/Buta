@@ -1424,6 +1424,11 @@ div.dropdown>div.list>div.item span {
     font-size: 16px !important;
 }
 
+.menu-price img{
+    width: 20px;
+    margin-right: 8px;
+}
+
 .addToCartBtn {
     display: inline-block;
     padding: 10px 20px;

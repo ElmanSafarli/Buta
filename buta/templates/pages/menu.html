@@ -427,10 +427,22 @@
                               <div class="menu-item-title">{{ menu_item.name }}</div>
                               <div class="bg-title">BUTA</div>
                               <div class="feature">
-                                <div>{{ menu_item.description }}</div>
+                                <div>
+                                    {% if menu_item.description %}
+                                        <p>{{ menu_item.description }}</p>
+                                    {% else %}
+
+                                    {% endif %}
+                                </div>
                               </div>
                               <div class="feature">
-                                <div class="menu-price">{{ menu_item.price }} ₼</div>
+                                <div class="menu-price">
+                                    {% if menu_item.name == 'Black tea' or menu_item.name == 'Черный чай' or menu_item.name == 'Qara çay' or menu_item.name == 'Yaşıl çay' or menu_item.name == 'Зеленый чай' or menu_item.name == 'Green tea' %}
+                                        <img src="{% static 'assets/cup.png' %}" alt="">2₼ <img src="{% static 'assets/kettle.png' %}" alt="">4₼
+                                    {% else %}
+                                         {{ menu_item.price }} ₼
+                                    {% endif %}
+                                </div>
                               </div>
                                 <div class="menu-btn">
                               <button class="addToCartBtn" data-menu-item="{{ menu_item.id }}">buy now</button>
