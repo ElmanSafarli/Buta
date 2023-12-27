@@ -44,10 +44,10 @@
                         <form class="contactPageForm" >
 
                             <ul class="wrapper">
-                                <li style="--i:4;"><input class="input" type="text" placeholder="{% trans 'Name Surname' %}" required="" id="contactPageName" name="name"></li>
-                                <li style="--i:3;"><input class="input" type="number" placeholder="{% trans 'Phone number' %}" required="" name="phone" id="contactPageNumber"></li>
-                                <li style="--i:2;"><input class="input" type="text" placeholder="{% trans 'Text' %}" required="" name="text" id="contactPageText"></li>
-                                <button style="--i:1;" id="confirmation-btn" onclick="sendContactFormData(event)">{% trans 'Submit' %}</button>
+                                <li style="--i:4;"><input class="input" type="text" placeholder="{% trans 'Name Surname' %}" required id="contactPageName" name="name"></li>
+                                <li style="--i:3;"><input class="input" type="number" placeholder="{% trans 'Phone number' %}" required name="phone" id="contactPageNumber"></li>
+                                <li style="--i:2;"><input class="input" type="text" placeholder="{% trans 'Text' %}" required name="text" id="contactPageText"></li>
+                                <button style="--i:1;" id="confirmation-btn" onclick="sendContactFormData(event)" type="submit">{% trans 'Submit' %}</button>
                             </ul>
                         </form>
 
@@ -56,7 +56,6 @@
             </div>
         </div>
     </section>
-
     {% include '../include/footer.html' %}
 
 {% endblock %}

@@ -1,5 +1,6 @@
 {% load static %}
 {% load static i18n %}
+
 <html lang="en">
 
 <head>
@@ -7,33 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buta Dining</title>
 
+    <!-- Font styles based on language -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;0,600;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap">
+
+    <!-- Other stylesheets and scripts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/d17c83b3d5.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    
-    <style>
-        {% if "/ru/" in request.path %}
-            /* Russian Font */
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;0,600;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap');
-            html * {
-                font-family: 'Montserrat Alternates', sans-serif !important;
-            }
-        {% else %}
-            /* Default Font (Poppins) */
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-            html * {
-                font-family: 'Poppins', sans-serif !important;
-            }
-        {% endif %}
-    </style>
 </head>
-<body>
+
+
+<body {% if "/ru/" in request.path %}class="ru"{% endif %}>
     <div class="loader-box" id="loader" style="display: none;">
         <div class="loader">
             <div class="loader__balls">
@@ -62,7 +49,7 @@
     <!-- Add the jQuery library -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/d17c83b3d5.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d17c83b3d5.js" crossorigin="anonymous"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script>

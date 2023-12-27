@@ -33,6 +33,13 @@ function sendContactFormData(event) {
     var contactNumber = document.getElementById('contactPageNumber').value;
     var contactText = document.getElementById('contactPageText').value;
 
+    if (!contactName || !contactNumber || !contactText) {
+        // If any of the required fields are empty, show an alert and do not proceed
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+
     var contactDetails = {
         name: contactName,
         phone: contactNumber,

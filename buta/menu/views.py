@@ -7,6 +7,9 @@ import requests
 import json
 from .forms import ReviewForm
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 class HomePage(TemplateView):
     template_name = 'pages/home.html'
 
@@ -38,8 +41,6 @@ class HomePage(TemplateView):
 class ContactPage(TemplateView):
     template_name = "pages/contact.html"
 
-
-
 @csrf_exempt
 def send_contact_form_to_telegram(request):
     if request.method == 'POST':
@@ -50,11 +51,30 @@ def send_contact_form_to_telegram(request):
             contact_number = received_data.get('phone')
             contact_text = received_data.get('text')
 
+            recipient_email = 'esn@stertell.com'
+
             # Prepare the message for Telegram
             message = f"New Contact Form Submission:\n\nName: {contact_name}\nNumber: {contact_number}\nText: {contact_text}"
 
             # Send message to Telegram
-            send_to_telegram(message)
+            # send_to_telegram(message)
+
+            # Send message via Email
+            # send_mail(
+            #     'New Contact Form Submission',
+            #     message,
+            #     settings.DEFAULT_FROM_EMAIL,
+            #     [settings.DEFAULT_FROM_EMAIL],  # Replace with your email address
+            #     fail_silently=False,
+            # )
+
+            send_mail(
+                'New Contact Form Submission',
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [recipient_email],  # Replace with the recipient email address
+                fail_silently=False,
+            )
 
             return JsonResponse({'status': 'success'})
         except Exception as e:

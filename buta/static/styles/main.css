@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,400;0,500;0,600;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* Default font for the body */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Apply Montserrat Alternates font when the 'ru' class is present */
+body.ru {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
 
 
 body {
@@ -250,6 +257,7 @@ body {
 div.dropdown {
     position: relative;
     width: 100px;
+    z-index: 2;
 }
 
 div.dropdown:after {
@@ -1450,13 +1458,19 @@ div.dropdown>div.list>div.item span {
 /* .product-1 {
     --product-color: #EB6CA4;
 } */
+.menu-item-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .menu-items {
     padding: 0 4%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: start;
+    width: 1224px;
+    align-items: center;
 }
 
 .menu-btn img {
@@ -1813,21 +1827,21 @@ div.dropdown>div.list>div.item span {
 .lunch-box-img img {
     position: fixed;
     top: 11rem;
-    right: -19rem;
-    width: 650px;
+    right: 0;
+    width: 618px;
 }
 
 .lun-box-result {
     max-width: 52rem;
-    width: 520px;
+    width: 420px;
     position: absolute;
-    left: 30rem;
+    left: 25rem;
 }
 
 .lunch-box-left {
     position: fixed;
-    left: 4rem;
-    top: 19rem;
+    left: 7rem;
+    top: 13rem;
 }
 
 .menu__price {
@@ -2090,7 +2104,7 @@ div.dropdown>div.list>div.item span {
     width: 26px;
     text-align: center;
     border-radius: 50%;
-    z-index: 1;
+    z-index: 18;
     font-size: 14px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
     height: 26px;
@@ -2110,6 +2124,7 @@ div.dropdown>div.list>div.item span {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 16;
 }
 
 #showCartBtn img {
@@ -2952,6 +2967,9 @@ div.dropdown>div.list>div.item span {
         width: 70%;
         height: 440px;
     }
+    .menu-items{
+        justify-content: center;
+    }
 }
 
 @media (max-width: 910px) {
@@ -3019,12 +3037,16 @@ div.dropdown>div.list>div.item span {
 }
 
 @media (max-width: 604px) {
+    .gallery-options .option.active{
+        height: 167px;
+    }
     div.dropdown {
-        width: 92px;
+        width: 74px;
     }
 
     div.dropdown>div.caption img, div.dropdown>div.list>div.item img, div.dropdown>div.caption svg, div.dropdown>div.list>div.item svg {
         width: 24px;
+        left: 12px;
     }
 
     div.dropdown>div.list>div.item, div.dropdown>div.caption {
@@ -3159,20 +3181,19 @@ div.dropdown>div.list>div.item span {
         letter-spacing: 0;
     }
 
-    .menu-items {
-        justify-content: center;
-    }
-
     .gallery-options .option .label .info .sub {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .gallery-options .option .label .info .main {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .lun-box-result {
         width: 85%;
+    }
+    #galleryOption{
+        height: 56vh;
     }
 }
 

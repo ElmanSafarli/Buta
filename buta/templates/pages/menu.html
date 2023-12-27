@@ -411,33 +411,35 @@
 
 
         <!-- Display menu items -->
-        <div class="menu-items">
-            {% for menu_item in menu_items %}
-            <div class="menu-item" data-menu-item-id="{{ menu_item.id }}" data-category="{{ menu_item.subcategory_id }}" data-main-category="{{ menu_item.subcategory.category_id }}">
-                <div class="card">
-                        <div class="menu-img">
-                            {% if menu_item.image %}
-                                <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
-                            {% else %}
-                                 <img src="{% static 'assets/logo.png' %}" alt="logo">
-                            {% endif %}
-                        </div>
-                        <div class="content">
-                          <div class="menu-item-title">{{ menu_item.name }}</div>
-                          <div class="bg-title">BUTA</div>
-                          <div class="feature">
-                            <div>{{ menu_item.description }}</div>
+        <div class="menu-item-group">
+            <div class="menu-items">
+                {% for menu_item in menu_items %}
+                <div class="menu-item" data-menu-item-id="{{ menu_item.id }}" data-category="{{ menu_item.subcategory_id }}" data-main-category="{{ menu_item.subcategory.category_id }}">
+                    <div class="card">
+                            <div class="menu-img">
+                                {% if menu_item.image %}
+                                    <img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}">
+                                {% else %}
+                                     <img src="{% static 'assets/logo.png' %}" alt="logo">
+                                {% endif %}
+                            </div>
+                            <div class="content">
+                              <div class="menu-item-title">{{ menu_item.name }}</div>
+                              <div class="bg-title">BUTA</div>
+                              <div class="feature">
+                                <div>{{ menu_item.description }}</div>
+                              </div>
+                              <div class="feature">
+                                <div class="menu-price">{{ menu_item.price }} ₼</div>
+                              </div>
+                                <div class="menu-btn">
+                              <button class="addToCartBtn" data-menu-item="{{ menu_item.id }}">buy now</button>
+                                     </div>
+                            </div>
                           </div>
-                          <div class="feature">
-                            <div class="menu-price">{{ menu_item.price }} ₼</div>
-                          </div>
-                            <div class="menu-btn">
-                          <button class="addToCartBtn" data-menu-item="{{ menu_item.id }}">buy now</button>
-                                 </div>
-                        </div>
-                      </div>
-                </div>
-            {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
 
 
@@ -512,6 +514,5 @@
 
     </div>
     </div>
-
 
 {% endblock %}
