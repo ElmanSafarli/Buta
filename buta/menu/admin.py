@@ -19,7 +19,7 @@ class MenuItemAdmin(TranslationAdmin):
 
 @admin.register(Review)
 class ReviewItemAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'email','created_at')
+    list_display = ('full_name', 'text', 'email','created_at')
     search_fields = ('full_name',)
 
 
