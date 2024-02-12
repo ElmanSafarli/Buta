@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from .models import Category, Subcategory, MenuItem, Review
+from .models import Category, Subcategory, MenuItem, Review, MenuItemDIP
 from django.http import JsonResponse, HttpResponseBadRequest
 from django.views.decorators.csrf import csrf_exempt
 import requests
@@ -92,12 +92,14 @@ class MenuPage(TemplateView):
         categories = Category.objects.all()
         subcategories = Subcategory.objects.all()
         menu_items = MenuItem.objects.all()
+        menu_dip = MenuItemDIP.objects.all()
 
         # Pass the data to the template context
         context = {
             'categories': categories,
             'subcategories': subcategories,
             'menu_items': menu_items,
+            'menu_dip': menu_dip,
         }
 
         return context

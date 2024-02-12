@@ -437,10 +437,13 @@
                               </div>
                               <div class="feature">
                                 <div class="menu-price">
-                                    {% if menu_item.name == 'Black tea' or menu_item.name == 'Черный чай' or menu_item.name == 'Qara çay' or menu_item.name == 'Yaşıl çay' or menu_item.name == 'Зеленый чай' or menu_item.name == 'Green tea' %}
-                                        <img src="{% static 'assets/cup.png' %}" alt="">2₼ <img src="{% static 'assets/kettle.png' %}" alt="">4₼
+                                    {% if menu_item.menuitemdip_set.all %}
+                                        {% for tea in menu_item.menuitemdip_set.all %}
+                                            <div><img src="{{ tea.image1.url }}" alt="{{ menu_item.name }}"> {{ tea.price1 }}₼</div>
+                                            <div><img src="{{ tea.image2.url }}" alt="{{ menu_item.name }}"> {{ tea.price2 }}₼</div>
+                                        {% endfor %}
                                     {% else %}
-                                         {{ menu_item.price }} ₼
+                                        {{ menu_item.price }} ₼
                                     {% endif %}
                                 </div>
                               </div>

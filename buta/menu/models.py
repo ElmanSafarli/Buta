@@ -24,6 +24,17 @@ class MenuItem(models.Model):
     def __str__(self):
         return f"{self.subcategory} - {self.name}"
 
+
+class MenuItemDIP(models.Model):
+    menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
+    image1 = models.ImageField(upload_to='menu_images/')
+    price1 = models.DecimalField(max_digits=5, decimal_places=2)
+    image2 = models.ImageField(upload_to='menu_images/')
+    price2 = models.DecimalField(max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.menu_item.name} - {self.price1}"
+
 class Review(models.Model):
     full_name = models.CharField(max_length=100, verbose_name='Ad Soyad')
     email = models.EmailField(verbose_name='e-mail')

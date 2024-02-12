@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from .models import Category, Subcategory, MenuItem
+from .models import Category, Subcategory, MenuItem, MenuItemDIP
 
 
 @register(Category)
@@ -15,3 +15,5 @@ class ActorTranslationOptions(TranslationOptions):
 @register(MenuItem)
 class GenreTranslationOptions(TranslationOptions):
     fields = ('name', 'description')
+
+

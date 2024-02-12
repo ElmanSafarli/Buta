@@ -1834,6 +1834,7 @@ div.dropdown>div.list>div.item span {
     top: 11rem;
     right: 0;
     width: 618px;
+    z-index: -1;
 }
 
 .lun-box-result {
