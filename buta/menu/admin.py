@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Subcategory, MenuItem, Review
+from .models import Category, Subcategory, MenuItem, Review, MenuItemDIP
 from modeltranslation.admin import TranslationAdmin
 
 @admin.register(Category)
@@ -22,4 +22,4 @@ class ReviewItemAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'text', 'email','created_at')
     search_fields = ('full_name',)
 
-
+admin.site.register(MenuItemDIP)
