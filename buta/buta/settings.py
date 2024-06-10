@@ -154,10 +154,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.office365.com'  # Outlook SMTP server
+EMAIL_HOST = ''  # Outlook SMTP server
 EMAIL_PORT = 587  # Outlook SMTP port
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'esn@stertell.com'
-EMAIL_HOST_PASSWORD = 'Cur81879'
-DEFAULT_FROM_EMAIL = 'esn@stertell.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
 
