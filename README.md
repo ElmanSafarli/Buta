@@ -1,6 +1,7 @@
 # **Restaurant website**
 Welcome to the restaurant website project page! This project was created to provide a convenient and fast way to order food online with delivery of order notifications in Telegram. The site has a minimalistic design and an intuitive interface, which makes the ordering process easy and enjoyable for users.
 
+![MacBook Pro 14_ - 1](https://github.com/ElmanSafarli/Buta/assets/115394943/0dd0a02e-d592-4ca5-8b12-883a2c0a5b2f)
 
 
 ## Why choose this site
