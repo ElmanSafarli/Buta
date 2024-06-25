@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+from dotenv import load_dotenv
+import os
 from django.views.generic import TemplateView
 from .models import Category, Subcategory, MenuItem, Review, MenuItemDIP
-from django.http import JsonResponse, HttpResponseBadRequest
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import requests
 import json
@@ -9,6 +11,8 @@ from .forms import ReviewForm
 
 from django.core.mail import send_mail
 from django.conf import settings
+
+load_dotenv()
 
 class HomePage(TemplateView):
     template_name = 'pages/home.html'
@@ -55,18 +59,6 @@ def send_contact_form_to_telegram(request):
 
             # Prepare the message for Telegram
             message = f"New Contact Form Submission:\n\nName: {contact_name}\nNumber: {contact_number}\nText: {contact_text}"
-
-            # Send message to Telegram
-            # send_to_telegram(message)
-
-            # Send message via Email
-            # send_mail(
-            #     'New Contact Form Submission',
-            #     message,
-            #     settings.DEFAULT_FROM_EMAIL,
-            #     [settings.DEFAULT_FROM_EMAIL],  # Replace with your email address
-            #     fail_silently=False,
-            # )
 
             send_mail(
                 'New Contact Form Submission',
@@ -147,8 +139,10 @@ def send_to_telegram_view(request):
 
 
 def send_to_telegram(message):
-    bot_token = '6781566989:AAFLLA_4c1yr9T1WPbhZzr3dUVxyqrH0ojI'
-    chat_id = '-1002109808216'
+    bot_token = os.getenv('BOT_TOKEN')
+    chat_id = os.getenv('CHAT_ID')
+
+    print(bot_token, chat_id)
 
     telegram_api_url = f'https://api.telegram.org/bot{bot_token}/sendMessage'
     params = {
